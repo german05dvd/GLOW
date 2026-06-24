@@ -2,30 +2,35 @@ const fs = require('fs');
 const path = require('path');
 
 const distClient = path.resolve('dist/client');
-const manifestPath = path.join(distClient, '.vite', 'manifest.json');
+const assetsDir = path.join(distClient, 'assets');
 
-if (!fs.existsSync(manifestPath)) {
-  console.error('❌ Vite manifest not found at', manifestPath);
+if (!fs.existsSync(assetsDir)) {
+  console.error('❌ Assets directory not found at', assetsDir);
   process.exit(1);
 }
 
-const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf-8'));
+const files = fs.readdirSync(assetsDir);
 
-// Busca el entry point (src/main.tsx o similar)
-const entry = manifest['src/main.tsx'] 
-  || manifest['index.html'] 
-  || Object.values(manifest).find(e => e.isEntry);
-
-if (!entry) {
-  console.error('❌ Entry point not found in manifest');
-  process.exit(1);
-}
-
-const cssLinks = (entry.css || []).map(css => 
-  `<link rel="stylesheet" href="/${css}" />`
+// CSS
+const cssFiles = files.filter(f => f.endsWith('.css'));
+const cssLinks = cssFiles.map(css => 
+  `<link rel="stylesheet" href="/assets/${css}" />`
 ).join('\n  ');
 
-const scriptTag = `<script type="module" src="/${entry.file}"></script>`;
+// JS entry point (el más pequeño que empiece con index-)
+const jsFiles = files.filter(f => f.endsWith('.js') && f.startsWith('index-'));
+if (jsFiles.length === 0) {
+  console.error('❌ No index JS files found');
+  process.exit(1);
+}
+
+const entryJs = jsFiles.sort((a, b) => {
+  const sizeA = fs.statSync(path.join(assetsDir, a)).size;
+  const sizeB = fs.statSync(path.join(assetsDir, b)).size;
+  return sizeA - sizeB;
+})[0];
+
+const scriptTag = `<script type="module" src="/assets/${entryJs}"></script>`;
 
 const html = `<!DOCTYPE html>
 <html lang="es">
@@ -33,7 +38,7 @@ const html = `<!DOCTYPE html>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Glow · Agencia de Marketing Digital</title>
-  <meta name="description" content="Agencia de marketing digital especializada en mipymes cubanas." />
+  <meta name="description" content="Agencia de marketing digital especializada en mipymes cubanas. Gestión de redes sociales, branding y sitios web conectados a WhatsApp." />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   ${cssLinks}
 </head>
