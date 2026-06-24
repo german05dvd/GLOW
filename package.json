@@ -5,8 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite dev",
-    "build": "vite build",
-    "build:cf": "NITRO_PRESET=cloudflare-pages vite build",
+    "build": "vite build && node scripts/post-build.cjs",
     "preview": "vite preview",
     "lint": "eslint .",
     "format": "prettier --write ."
