@@ -15,18 +15,10 @@ function Index() {
   return (
     <>
       <Hero />
-      <section id="servicios">
-        <ServicesScroll />
-      </section>
-      <section id="redes">
-        <SocialScrolly />
-      </section>
-      <section id="marca">
-        <BrandScrolly />
-      </section>
-      <section id="catalogo">
-        <WebsiteScrolly />
-      </section>
+      <section id="servicios"><ServicesScroll /></section>
+      <section id="redes"><SocialScrolly /></section>
+      <section id="marca"><BrandScrolly /></section>
+      <section id="catalogo"><WebsiteScrolly /></section>
       <TemplatesSection />
       <ContactSection />
     </>
