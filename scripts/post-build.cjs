@@ -17,20 +17,24 @@ const cssLinks = cssFiles.map(css =>
   `<link rel="stylesheet" href="/assets/${css}" />`
 ).join('\n  ');
 
-// JS entry point (el más pequeño que empiece con index-)
+// JS entry points (todos los index-*.js)
 const jsFiles = files.filter(f => f.endsWith('.js') && f.startsWith('index-'));
+
 if (jsFiles.length === 0) {
   console.error('❌ No index JS files found');
   process.exit(1);
 }
 
-const entryJs = jsFiles.sort((a, b) => {
+// Ordenar por tamaño (menor a mayor) — el entry point suele ser el más pequeño
+const sortedJs = jsFiles.sort((a, b) => {
   const sizeA = fs.statSync(path.join(assetsDir, a)).size;
   const sizeB = fs.statSync(path.join(assetsDir, b)).size;
   return sizeA - sizeB;
-})[0];
+});
 
-const scriptTag = `<script type="module" src="/assets/${entryJs}"></script>`;
+const scriptTags = sortedJs.map(js => 
+  `<script type="module" src="/assets/${js}"></script>`
+).join('\n  ');
 
 const html = `<!DOCTYPE html>
 <html lang="es">
@@ -44,9 +48,10 @@ const html = `<!DOCTYPE html>
 </head>
 <body>
   <div id="root"></div>
-  ${scriptTag}
+  ${scriptTags}
 </body>
 </html>`;
 
 fs.writeFileSync(path.join(distClient, 'index.html'), html);
-console.log('✅ Generated dist/client/index.html');
+fs.writeFileSync(path.join(distClient, '404.html'), html);
+console.log('✅ Generated dist/client/index.html and 404.html');
