@@ -1,4 +1,5 @@
 import { lazy, Suspense, useEffect, useRef } from "react";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 // Kept as stub to avoid module-not-found build errors
 const HeroScene = lazy(() =>
@@ -28,6 +29,7 @@ function measureText(text: string, fontSize: number): number {
 }
 
 export function Hero() {
+  const isMobile = useIsMobile();
   const typedRef = useRef<HTMLSpanElement>(null);
   const indexRef = useRef(0);
   const rafRef   = useRef<number | null>(null);
@@ -106,21 +108,22 @@ export function Hero() {
         </Suspense>
       </div>
 
-      {/* Background watermark — desplazado más a la derecha para ocupar
-          el espacio en blanco y crear el solapamiento elegante. */}
+      {/* Background watermark — en desktop se desplaza a la derecha para
+          el solapamiento elegante; en móvil se centra para que "glow"
+          sea siempre completamente visible. */}
       <div
         aria-hidden="true"
         className="pointer-events-none select-none absolute leading-none"
         style={{
           fontFamily: "'Playfair Display', Georgia, serif",
-          fontSize: "clamp(220px, 32vw, 520px)",
+          fontSize: isMobile ? "clamp(100px, 28vw, 200px)" : "clamp(220px, 32vw, 520px)",
           fontWeight: 390,
-          color: "oklch(0.14 0.016 62 / 0.035)",
+          color: "oklch(0.14 0.016 62 / 0.045)",
           letterSpacing: "-0.04em",
           whiteSpace: "nowrap",
-          top: "30%",
-          left: "34%",
-          transform: "translateY(-35%)",
+          top: isMobile ? "18%" : "30%",
+          left: isMobile ? "50%" : "34%",
+          transform: isMobile ? "translate(-50%, -35%)" : "translateY(-35%)",
         }}
       >
         glow
@@ -268,7 +271,7 @@ export function Hero() {
 
       {/* Bottom services strip */}
       <div
-        className="absolute bottom-0 left-0 right-0 flex items-center gap-8 border-t px-12 sm:px-20 md:px-28 lg:px-36"
+        className="absolute bottom-0 left-0 right-0 flex items-center gap-8 border-t px-12 sm:px-20 md:px-28 lg:px-36 overflow-x-auto scrollbar-none"
         style={{
           height: "44px",
           borderColor: "oklch(0.906 0.007 80)",

@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
+import { useIsMobile } from "@/hooks/use-mobile";
 import { Heart, MessageCircle, Send, Bookmark } from "lucide-react";
 
 const feedPosts = [
@@ -8,6 +9,13 @@ const feedPosts = [
   { user: "glow.agency", color: "bg-muted-foreground" },
   { user: "glow.agency", color: "bg-accent-brand/70" },
   { user: "glow.agency", color: "bg-foreground/80" },
+];
+
+const listItems = [
+  "Calendario editorial mensual",
+  "Diseño de posts, reels y stories",
+  "Respuesta a mensajes y comunidad",
+  "Reportes claros de crecimiento",
 ];
 
 function PhoneFeed() {
@@ -62,7 +70,89 @@ function PhoneFeed() {
   );
 }
 
+/* ── MÓVIL: layout estático, sin 3D, sin scroll-link ── */
+function SocialScrollyMobile() {
+  return (
+    <section className="bg-background py-16 px-5">
+      <div className="mb-10">
+        <span
+          className="text-[10px] font-normal uppercase tracking-[0.28em]"
+          style={{ color: "oklch(0.72 0.13 74)", fontFamily: "'Playfair Display', Georgia, serif" }}
+        >
+          Servicios en práctica
+        </span>
+        <h2
+          className="mt-3 text-4xl font-normal tracking-tight text-foreground"
+          style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
+        >
+          Tus redes,{" "}
+          <span style={{ color: "oklch(0.72 0.13 74)" }}>vivas</span> todos los días.
+        </h2>
+        <p
+          className="mt-5 text-sm font-normal leading-[1.85]"
+          style={{ color: "oklch(0.72 0.008 80)", fontFamily: "'Playfair Display', Georgia, serif" }}
+        >
+          Diseñamos, programamos y publicamos contenido constante para tu
+          negocio. Mientras tú lo atiendes, nosotros mantenemos tu
+          marca presente en todas las redes y plataformas.
+        </p>
+      </div>
+
+      {/* Teléfono centrado, tamaño reducido */}
+      <div className="flex justify-center mb-10">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.4 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          style={{
+            borderColor: "oklch(0.14 0.016 62)",
+          }}
+          className="relative h-[400px] w-[200px] rounded-[2.4rem] border-[10px] bg-foreground shadow-2xl"
+        >
+          <div
+            className="absolute left-1/2 top-2 z-10 h-4 w-20 -translate-x-1/2 rounded-full"
+            style={{ backgroundColor: "oklch(0.14 0.016 62)" }}
+          />
+          <div className="h-full w-full overflow-hidden rounded-[1.5rem] bg-background">
+            <PhoneFeed />
+          </div>
+          <div
+            className="pointer-events-none absolute -inset-8 -z-10 rounded-[3.5rem] blur-3xl"
+            style={{ backgroundColor: "oklch(0.72 0.13 74 / 0.2)" }}
+          />
+        </motion.div>
+      </div>
+
+      {/* Lista de servicios */}
+      <motion.ul
+        initial={{ opacity: 0, y: 16 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.5, ease: "easeOut", delay: 0.1 }}
+        className="space-y-3"
+      >
+        {listItems.map((item) => (
+          <li
+            key={item}
+            className="flex items-center gap-3 text-sm font-normal"
+            style={{ color: "oklch(0.14 0.016 62)", fontFamily: "'Playfair Display', Georgia, serif" }}
+          >
+            <span
+              className="h-px w-6 rounded-full flex-none"
+              style={{ backgroundColor: "oklch(0.72 0.13 74)" }}
+            />
+            {item}
+          </li>
+        ))}
+      </motion.ul>
+    </section>
+  );
+}
+
+/* ── DESKTOP: experiencia 3D con scroll original ── */
 export function SocialScrolly() {
+  const isMobile = useIsMobile();
   const containerRef = useRef<HTMLDivElement>(null);
 
   const { scrollYProgress } = useScroll({
@@ -78,6 +168,8 @@ export function SocialScrolly() {
 
   const textOpacity = useTransform(scrollYProgress, [0.2, 0.55], [0, 1]);
   const textY = useTransform(scrollYProgress, [0.2, 0.55], [40, 0]);
+
+  if (isMobile) return <SocialScrollyMobile />;
 
   return (
     <section
@@ -145,12 +237,7 @@ export function SocialScrolly() {
               marca presente en todas las redes y plataformas.
             </p>
             <ul className="mt-8 space-y-3">
-              {[
-                "Calendario editorial mensual",
-                "Diseño de posts, reels y stories",
-                "Respuesta a mensajes y comunidad",
-                "Reportes claros de crecimiento",
-              ].map((item) => (
+              {listItems.map((item) => (
                 <li
                   key={item}
                   className="flex items-center gap-3 text-sm font-normal md:text-base"

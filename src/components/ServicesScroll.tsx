@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
+import { useIsMobile } from "@/hooks/use-mobile";
 import {
   Heart,
   MessageCircle,
@@ -14,7 +15,6 @@ import {
 
 /* ─── Visuals ──────────────────────────────────────────────────────────────── */
 
-/** Redes: phone with feed + metrics dashboard */
 function SocialVisual() {
   return (
     <div className="flex h-full w-full items-center justify-center gap-4 px-5 py-8">
@@ -75,7 +75,6 @@ function SocialVisual() {
   );
 }
 
-/** Marca: 4 logo variants con nombres ficticios propios */
 function BrandVisual() {
   const logos = [
     { label: "Imagotipo", name: "Alma", accent: "A", bg: "bg-card" },
@@ -123,7 +122,6 @@ function BrandVisual() {
   );
 }
 
-/** Web: desktop hero mockup stacked with phone catalog mockup */
 function WebsiteVisual() {
   return (
     <div className="flex h-full w-full items-center justify-center gap-3 px-5 py-8">
@@ -138,7 +136,6 @@ function WebsiteVisual() {
             <div className="h-1 w-16 rounded bg-muted" />
           </div>
         </div>
-        {/* Nav */}
         <div className="flex items-center justify-between border-b border-border/50 px-3 py-2 bg-background">
           <div className="h-2 w-8 rounded bg-foreground/80" />
           <div className="flex gap-1.5">
@@ -148,14 +145,12 @@ function WebsiteVisual() {
           </div>
           <div className="h-4 w-10 rounded-full bg-accent-brand" />
         </div>
-        {/* Hero */}
         <div className="bg-gradient-to-br from-secondary/40 to-accent-brand/5 px-4 py-4 space-y-1.5">
           <div className="h-3 w-3/5 rounded bg-foreground/80" />
           <div className="h-2 w-4/5 rounded bg-foreground/50" />
           <div className="h-1.5 w-2/3 rounded bg-muted" />
           <div className="h-6 w-20 rounded bg-accent-brand mt-2" />
         </div>
-        {/* Feature grid */}
         <div className="grid grid-cols-3 gap-1.5 p-3">
           {[...Array(3)].map((_, i) => (
             <div key={i} className="rounded border border-border bg-background p-1.5 space-y-1">
@@ -165,7 +160,6 @@ function WebsiteVisual() {
             </div>
           ))}
         </div>
-        {/* Footer band */}
         <div className="h-4 bg-foreground/90 flex items-center justify-center">
           <div className="h-1 w-16 rounded bg-background/40" />
         </div>
@@ -174,12 +168,10 @@ function WebsiteVisual() {
       {/* Phone catalog */}
       <div className="relative h-[300px] w-[140px] shrink-0 rounded-[1.5rem] border-[6px] border-foreground bg-background shadow-2xl overflow-hidden">
         <div className="absolute left-1/2 top-1.5 h-1 w-8 -translate-x-1/2 rounded-full bg-foreground z-10" />
-        {/* Header */}
         <div className="flex items-center justify-between px-2.5 pt-5 pb-2 border-b border-border">
           <div className="h-2 w-8 rounded bg-foreground/80" />
           <div className="h-3 w-3 rounded bg-muted" />
         </div>
-        {/* Catalog grid */}
         <div className="grid grid-cols-2 gap-1.5 p-2">
           {[...Array(6)].map((_, i) => (
             <div key={i} className="rounded border border-border bg-background overflow-hidden">
@@ -191,7 +183,6 @@ function WebsiteVisual() {
             </div>
           ))}
         </div>
-        {/* WhatsApp pill at bottom */}
         <div className="absolute bottom-2 left-2 right-2 h-6 rounded-full flex items-center justify-center gap-1 bg-[#25D366]/15 border border-[#25D366]/40">
           <MessageCircle className="h-2.5 w-2.5 text-[#25D366]" />
           <div className="h-1 w-12 rounded bg-[#25D366]/50" />
@@ -201,7 +192,6 @@ function WebsiteVisual() {
   );
 }
 
-/** Small decorative ornament for text panel */
 function TextOrnament({ number }: { number: string }) {
   return (
     <svg viewBox="0 0 120 120" className="h-24 w-24" style={{ color: "oklch(0.72 0.13 74 / 0.3)" }} aria-hidden="true">
@@ -220,7 +210,6 @@ function TextOrnament({ number }: { number: string }) {
       >
         {number}
       </text>
-      {/* Sparkles */}
       {[
         { x: 100, y: 20, s: 0.6 },
         { x: 15, y: 95, s: 0.8 },
@@ -236,7 +225,7 @@ function TextOrnament({ number }: { number: string }) {
   );
 }
 
-/* ─── Data (reordered) ────────────────────────────────────────────────────── */
+/* ─── Data ────────────────────────────────────────────────────────────────── */
 
 const services = [
   {
@@ -265,9 +254,85 @@ const services = [
   },
 ];
 
+/* ─── Mobile card ─────────────────────────────────────────────────────────── */
+
+function MobileServiceCard({ service }: { service: (typeof services)[number] }) {
+  const Visual = service.Visual;
+  return (
+    <article
+      className="overflow-hidden rounded-3xl border shadow-xl"
+      style={{ borderColor: "oklch(0.906 0.007 80)" }}
+    >
+      {/* Visual arriba */}
+      <div
+        className="relative w-full border-b"
+        style={{
+          height: "260px",
+          borderColor: "oklch(0.906 0.007 80)",
+          backgroundColor: "oklch(0.988 0.005 80)",
+        }}
+      >
+        <div
+          className="absolute inset-0 opacity-[0.04]"
+          style={{
+            backgroundImage: "radial-gradient(circle, currentColor 1px, transparent 1px)",
+            backgroundSize: "16px 16px",
+          }}
+        />
+        <Visual />
+      </div>
+
+      {/* Texto abajo */}
+      <div className="relative flex flex-col gap-4 p-6 bg-background overflow-hidden">
+        {/* Ornament de fondo */}
+        <div className="absolute -right-4 -bottom-4 opacity-80 pointer-events-none">
+          <TextOrnament number={service.number} />
+        </div>
+
+        <div className="relative flex items-center justify-between">
+          <span
+            className="text-sm font-normal"
+            style={{ color: "oklch(0.72 0.008 80)", fontFamily: "'Playfair Display', Georgia, serif" }}
+          >
+            {service.number} / 03
+          </span>
+          <span
+            className="rounded-full px-3 py-1 text-[10px] font-normal uppercase tracking-wider"
+            style={{
+              border: "1px solid oklch(0.906 0.007 80)",
+              color: "oklch(0.72 0.008 80)",
+              fontFamily: "'Playfair Display', Georgia, serif",
+            }}
+          >
+            {service.tag}
+          </span>
+        </div>
+
+        <div className="relative">
+          <h3
+            className="text-2xl font-normal tracking-tight text-foreground"
+            style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
+          >
+            {service.title}
+          </h3>
+          <p
+            className="mt-3 text-sm font-normal leading-[1.85]"
+            style={{ color: "oklch(0.72 0.008 80)", fontFamily: "'Playfair Display', Georgia, serif" }}
+          >
+            {service.description}
+          </p>
+        </div>
+
+        <div className="relative h-px w-12 rounded-full" style={{ backgroundColor: "oklch(0.72 0.13 74)" }} />
+      </div>
+    </article>
+  );
+}
+
 /* ─── Section ──────────────────────────────────────────────────────────────── */
 
 export function ServicesScroll() {
+  const isMobile = useIsMobile();
   const containerRef = useRef<HTMLDivElement>(null);
 
   const { scrollYProgress } = useScroll({
@@ -278,6 +343,38 @@ export function ServicesScroll() {
   const SCROLL_HEIGHT = "400vh";
   const x = useTransform(scrollYProgress, [0, 1], ["0%", "-66.66%"]);
 
+  /* ── MÓVIL: stack vertical sin scroll horizontal ── */
+  if (isMobile) {
+    return (
+      <section id="servicios" className="bg-background py-16 px-5">
+        {/* Header */}
+        <div className="mb-10">
+          <span
+            className="text-[10px] font-normal uppercase tracking-[0.28em]"
+            style={{ color: "oklch(0.72 0.13 74)", fontFamily: "'Playfair Display', Georgia, serif" }}
+          >
+            Nuestros servicios
+          </span>
+          <h2
+            className="mt-3 text-4xl font-normal tracking-tight text-foreground"
+            style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
+          >
+            Tres escalones para{" "}
+            <span style={{ color: "oklch(0.72 0.13 74)" }}>crecer.</span>
+          </h2>
+        </div>
+
+        {/* Cards apiladas */}
+        <div className="flex flex-col gap-6">
+          {services.map((service) => (
+            <MobileServiceCard key={service.number} service={service} />
+          ))}
+        </div>
+      </section>
+    );
+  }
+
+  /* ── DESKTOP: experiencia horizontal con scroll original ── */
   return (
     <section
       id="servicios"
@@ -319,7 +416,6 @@ export function ServicesScroll() {
                         backgroundSize: "90px 78px"
                       }}
                     > </div>
-                    {/* Decorative ornament in background */}
                     <div className="absolute -right-6 -bottom-6 opacity-90 pointer-events-none">
                       <TextOrnament number={service.number} />
                     </div>
