@@ -6,6 +6,7 @@ import {
   type MotionValue,
 } from "framer-motion";
 import { Hexagon, Star, Triangle, Circle, Square, Zap, Heart, Diamond } from "lucide-react";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const logos = [
   { top: "8%", left: "6%", size: 110, Icon: Hexagon, tint: "text-accent-brand" },
@@ -124,7 +125,7 @@ function StepItem({
   );
 }
 
-export function BrandScrolly() {
+function BrandScrollyDesktop() {
   const containerRef = useRef<HTMLDivElement>(null);
 
   const { scrollYProgress } = useScroll({
@@ -196,4 +197,119 @@ export function BrandScrolly() {
       </div>
     </section>
   );
+}
+
+/* ── MÓVIL: layout estático, grid de logos + pasos en lista ── */
+const mobileLogos = [
+  { Icon: Hexagon, tint: "brand" },
+  { Icon: Star, tint: "ink" },
+  { Icon: Triangle, tint: "muted" },
+  { Icon: Circle, tint: "ink" },
+  { Icon: Square, tint: "terra" },
+  { Icon: Diamond, tint: "brand" },
+] as const;
+
+function tintColor(t: string) {
+  if (t === "brand") return "oklch(0.56 0.085 128)";
+  if (t === "terra") return "oklch(0.62 0.12 48)";
+  if (t === "muted") return "oklch(0.50 0.022 120)";
+  return "oklch(0.27 0.022 130)";
+}
+
+function BrandScrollyMobile() {
+  return (
+    <section className="relative overflow-hidden bg-background py-16 px-5">
+      {/* Decoración geométrica de fondo */}
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0">
+        <div
+          className="absolute rounded-full border"
+          style={{ top: "6%", right: "-16%", width: "60vw", aspectRatio: "1", borderColor: "oklch(0.56 0.085 128 / 0.14)" }}
+        />
+        <div
+          className="absolute"
+          style={{ bottom: "6%", left: "-10%", width: "44vw", aspectRatio: "1", backgroundColor: "oklch(0.62 0.12 48 / 0.07)", borderRadius: "60% 40% 40% 60% / 50% 50% 50% 50%" }}
+        />
+      </div>
+
+      {/* Header */}
+      <div className="relative mb-8">
+        <span
+          className="text-[10px] font-normal uppercase tracking-[0.28em]"
+          style={{ color: "oklch(0.56 0.085 128)", fontFamily: "'Playfair Display', Georgia, serif" }}
+        >
+          Diseño de marca
+        </span>
+        <h2
+          className="mt-3 text-balance text-4xl font-normal tracking-tight text-foreground"
+          style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
+        >
+          Tu marca,{" "}
+          <span style={{ color: "oklch(0.56 0.085 128)" }}>paso a paso.</span>
+        </h2>
+      </div>
+
+      {/* Grid de logos */}
+      <div className="relative mb-10 grid grid-cols-3 gap-3">
+        {mobileLogos.map(({ Icon, tint }, i) => (
+          <motion.div
+            key={i}
+            initial={{ opacity: 0, scale: 0.7 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, margin: "-40px" }}
+            transition={{ duration: 0.4, delay: i * 0.06, ease: "easeOut" }}
+            className="flex aspect-square items-center justify-center rounded-2xl border bg-card shadow-sm"
+            style={{ borderColor: "oklch(0.89 0.018 95)" }}
+          >
+            <Icon className="h-1/3 w-1/3" style={{ color: tintColor(tint) }} strokeWidth={1.2} />
+          </motion.div>
+        ))}
+      </div>
+
+      {/* Pasos en lista */}
+      <div className="relative space-y-6">
+        {steps.map((step) => (
+          <motion.div
+            key={step.n}
+            initial={{ opacity: 0, x: -16 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-40px" }}
+            transition={{ duration: 0.45, ease: "easeOut" }}
+            className="flex gap-4"
+          >
+            <div className="flex flex-col items-center pt-1">
+              <span
+                className="text-xs font-normal"
+                style={{ color: "oklch(0.56 0.085 128)", fontFamily: "'Playfair Display', Georgia, serif" }}
+              >
+                {step.n}
+              </span>
+              <div
+                className="mt-2 h-10 w-px"
+                style={{ backgroundColor: "oklch(0.56 0.085 128 / 0.4)" }}
+              />
+            </div>
+            <div>
+              <h3
+                className="text-xl font-normal tracking-tight text-foreground"
+                style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
+              >
+                {step.title}
+              </h3>
+              <p
+                className="mt-1 text-sm font-normal leading-[1.8]"
+                style={{ color: "oklch(0.50 0.022 120)", fontFamily: "'Playfair Display', Georgia, serif" }}
+              >
+                {step.desc}
+              </p>
+            </div>
+          </motion.div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+export function BrandScrolly() {
+  const isMobile = useIsMobile();
+  return isMobile ? <BrandScrollyMobile /> : <BrandScrollyDesktop />;
 }
