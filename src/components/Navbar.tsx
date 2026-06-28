@@ -38,7 +38,7 @@ export function Navbar() {
   return (
     <header
       className="fixed top-0 left-0 z-50 w-full bg-background/80 backdrop-blur-md"
-      style={{ borderBottom: "1px solid oklch(0.906 0.007 80 / 0.5)" }}
+      style={{ borderBottom: "1px solid oklch(0.89 0.018 95 / 0.5)" }}
     >
       <div className="mx-auto flex h-16 max-w-7xl items-center px-8 md:px-12 lg:px-16">
         {/* Izquierda: Inicio */}
@@ -49,12 +49,12 @@ export function Navbar() {
             style={{
               fontFamily: "'Playfair Display', Georgia, serif",
               fontSize: "1.25rem",
-              color: "oklch(0.14 0.016 62)",
+              color: "oklch(0.27 0.022 130)",
             }}
           >
             <Home
               className="h-6 w-6 transition-transform duration-300 group-hover:scale-110"
-              style={{ color: "oklch(0.72 0.13 74)" }}
+              style={{ color: "oklch(0.56 0.085 128)" }}
             />
             <span className="font-normal tracking-tight">Inicio</span>
           </a>
@@ -70,14 +70,14 @@ export function Navbar() {
               style={{
                 fontFamily: "'Playfair Display', Georgia, serif",
                 fontSize: "0.875rem",
-                color: "oklch(0.72 0.008 80)",
+                color: "oklch(0.50 0.022 120)",
                 letterSpacing: "0.04em",
               }}
               onMouseEnter={(e) =>
-                (e.currentTarget.style.color = "oklch(0.14 0.016 62)")
+                (e.currentTarget.style.color = "oklch(0.27 0.022 130)")
               }
               onMouseLeave={(e) =>
-                (e.currentTarget.style.color = "oklch(0.72 0.008 80)")
+                (e.currentTarget.style.color = "oklch(0.50 0.022 120)")
               }
             >
               {link.label}
@@ -98,13 +98,13 @@ export function Navbar() {
             className="inline-flex items-center gap-2 rounded-full px-5 py-2 text-sm font-normal transition-colors duration-200"
             style={{
               fontFamily: "'Playfair Display', Georgia, serif",
-              border: "1px solid oklch(0.72 0.13 74)",
-              color: "oklch(0.72 0.13 74)",
+              border: "1px solid oklch(0.56 0.085 128)",
+              color: "oklch(0.56 0.085 128)",
               background: "transparent",
               letterSpacing: "0.04em",
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.background = "oklch(0.72 0.13 74 / 0.06)";
+              e.currentTarget.style.background = "oklch(0.56 0.085 128 / 0.06)";
             }}
             onMouseLeave={(e) => {
               e.currentTarget.style.background = "transparent";
@@ -121,7 +121,7 @@ export function Navbar() {
         <button
           onClick={() => setOpen((v) => !v)}
           className="inline-flex h-10 w-10 items-center justify-center rounded-md md:hidden"
-          style={{ color: "oklch(0.14 0.016 62)" }}
+          style={{ color: "oklch(0.27 0.022 130)" }}
           aria-label="Abrir menú"
         >
           {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -132,7 +132,7 @@ export function Navbar() {
       {open && (
         <div
           className="bg-background px-8 py-6 md:hidden"
-          style={{ borderTop: "1px solid oklch(0.906 0.007 80 / 0.5)" }}
+          style={{ borderTop: "1px solid oklch(0.89 0.018 95 / 0.5)" }}
         >
           <nav className="flex flex-col gap-4">
             {links.map((link) => (
@@ -144,14 +144,14 @@ export function Navbar() {
                 style={{
                   fontFamily: "'Playfair Display', Georgia, serif",
                   fontSize: "1rem",
-                  color: "oklch(0.72 0.008 80)",
+                  color: "oklch(0.50 0.022 120)",
                   letterSpacing: "0.04em",
                 }}
                 onMouseEnter={(e) =>
-                  (e.currentTarget.style.color = "oklch(0.14 0.016 62)")
+                  (e.currentTarget.style.color = "oklch(0.27 0.022 130)")
                 }
                 onMouseLeave={(e) =>
-                  (e.currentTarget.style.color = "oklch(0.72 0.008 80)")
+                  (e.currentTarget.style.color = "oklch(0.50 0.022 120)")
                 }
               >
                 {link.label}
@@ -173,13 +173,13 @@ export function Navbar() {
                 className="inline-flex w-full items-center justify-center gap-2 rounded-full px-5 py-2.5 text-sm font-normal transition-colors duration-200"
                 style={{
                   fontFamily: "'Playfair Display', Georgia, serif",
-                  border: "1px solid oklch(0.72 0.13 74)",
-                  color: "oklch(0.72 0.13 74)",
+                  border: "1px solid oklch(0.56 0.085 128)",
+                  color: "oklch(0.56 0.085 128)",
                   background: "transparent",
                   letterSpacing: "0.04em",
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.background = "oklch(0.72 0.13 74 / 0.06)";
+                  e.currentTarget.style.background = "oklch(0.56 0.085 128 / 0.06)";
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.background = "transparent";

@@ -20,7 +20,7 @@ export function Footer() {
   return (
     <footer
       className="border-t"
-      style={{ borderColor: "oklch(0.906 0.007 80 / 0.2)", backgroundColor: "oklch(0.14 0.016 62)" }}
+      style={{ borderColor: "oklch(0.89 0.018 95 / 0.2)", backgroundColor: "oklch(0.27 0.022 130)" }}
     >
       <div className="mx-auto max-w-7xl px-8 py-16 md:px-12 lg:px-16">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-3 md:gap-8">
@@ -28,20 +28,20 @@ export function Footer() {
           <div className="space-y-4">
             <h3
               className="text-2xl font-normal tracking-tight"
-              style={{ color: "oklch(0.988 0.005 80)", fontFamily: "'Playfair Display', Georgia, serif" }}
+              style={{ color: "oklch(0.972 0.013 92)", fontFamily: "'Playfair Display', Georgia, serif" }}
             >
               Glow{" "}
-              <span style={{ color: "oklch(0.72 0.13 74)" }}>Agencia</span>
+              <span style={{ color: "oklch(0.56 0.085 128)" }}>Agencia</span>
             </h3>
             <p
               className="max-w-xs text-sm font-normal leading-[1.85]"
-              style={{ color: "oklch(0.988 0.005 80 / 0.7)", fontFamily: "'Playfair Display', Georgia, serif" }}
+              style={{ color: "oklch(0.972 0.013 92 / 0.7)", fontFamily: "'Playfair Display', Georgia, serif" }}
             >
               Gestiones de redes sociales, diseño de marca y plataformas web personalizadas.
             </p>
             <p
               className="max-w-xs text-sm font-normal leading-[1.85]"
-              style={{ color: "oklch(0.988 0.005 80 / 0.7)", fontFamily: "'Playfair Display', Georgia, serif" }}
+              style={{ color: "oklch(0.972 0.013 92 / 0.7)", fontFamily: "'Playfair Display', Georgia, serif" }}
             >
               Diseñado para potenciar el mercado cubano.
             </p>
@@ -51,7 +51,7 @@ export function Footer() {
           <div className="space-y-4">
             <h4
               className="text-sm font-normal uppercase tracking-wider"
-              style={{ color: "oklch(0.988 0.005 80 / 0.9)", fontFamily: "'Playfair Display', Georgia, serif" }}
+              style={{ color: "oklch(0.972 0.013 92 / 0.9)", fontFamily: "'Playfair Display', Georgia, serif" }}
             >
               Navegación
             </h4>
@@ -62,14 +62,14 @@ export function Footer() {
                     href={link.href}
                     className="text-sm font-normal transition-colors duration-200"
                     style={{
-                      color: "oklch(0.988 0.005 80 / 0.7)",
+                      color: "oklch(0.972 0.013 92 / 0.7)",
                       fontFamily: "'Playfair Display', Georgia, serif",
                     }}
                     onMouseEnter={(e) =>
-                      (e.currentTarget.style.color = "oklch(0.72 0.13 74)")
+                      (e.currentTarget.style.color = "oklch(0.56 0.085 128)")
                     }
                     onMouseLeave={(e) =>
-                      (e.currentTarget.style.color = "oklch(0.988 0.005 80 / 0.7)")
+                      (e.currentTarget.style.color = "oklch(0.972 0.013 92 / 0.7)")
                     }
                   >
                     {link.label}
@@ -83,7 +83,7 @@ export function Footer() {
           <div className="space-y-4">
             <h4
               className="text-sm font-normal uppercase tracking-wider"
-              style={{ color: "oklch(0.988 0.005 80 / 0.9)", fontFamily: "'Playfair Display', Georgia, serif" }}
+              style={{ color: "oklch(0.972 0.013 92 / 0.9)", fontFamily: "'Playfair Display', Georgia, serif" }}
             >
               Síguenos
             </h4>
@@ -97,16 +97,16 @@ export function Footer() {
                   aria-label={social.label}
                   className="flex h-10 w-10 items-center justify-center rounded-full transition-colors duration-200"
                   style={{
-                    backgroundColor: "oklch(0.988 0.005 80 / 0.1)",
-                    color: "oklch(0.988 0.005 80 / 0.8)",
+                    backgroundColor: "oklch(0.972 0.013 92 / 0.1)",
+                    color: "oklch(0.972 0.013 92 / 0.8)",
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.backgroundColor = "oklch(0.72 0.13 74)";
-                    e.currentTarget.style.color = "oklch(0.14 0.016 62)";
+                    e.currentTarget.style.backgroundColor = "oklch(0.56 0.085 128)";
+                    e.currentTarget.style.color = "oklch(0.98 0.01 92)";
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.backgroundColor = "oklch(0.988 0.005 80 / 0.1)";
-                    e.currentTarget.style.color = "oklch(0.988 0.005 80 / 0.8)";
+                    e.currentTarget.style.backgroundColor = "oklch(0.972 0.013 92 / 0.1)";
+                    e.currentTarget.style.color = "oklch(0.972 0.013 92 / 0.8)";
                   }}
                 >
                   <social.Icon className="h-5 w-5" />
@@ -119,17 +119,17 @@ export function Footer() {
         {/* Copyright */}
         <div
           className="mt-14 flex flex-col items-center justify-between gap-4 border-t pt-8 md:flex-row"
-          style={{ borderColor: "oklch(0.988 0.005 80 / 0.1)" }}
+          style={{ borderColor: "oklch(0.972 0.013 92 / 0.1)" }}
         >
           <p
             className="text-xs font-normal"
-            style={{ color: "oklch(0.988 0.005 80 / 0.5)", fontFamily: "'Playfair Display', Georgia, serif" }}
+            style={{ color: "oklch(0.972 0.013 92 / 0.5)", fontFamily: "'Playfair Display', Georgia, serif" }}
           >
             © {currentYear} Glow Agencia. Todos los derechos reservados.
           </p>
           <p
             className="text-xs font-normal"
-            style={{ color: "oklch(0.988 0.005 80 / 0.5)", fontFamily: "'Playfair Display', Georgia, serif" }}
+            style={{ color: "oklch(0.972 0.013 92 / 0.5)", fontFamily: "'Playfair Display', Georgia, serif" }}
           >
             Diseñado por el equipo web.
           </p>

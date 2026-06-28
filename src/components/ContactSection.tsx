@@ -52,7 +52,7 @@ export function ContactSection() {
         <div className="mb-10 text-center md:mb-14 max-w-2xl mx-auto">
           <span
             className="text-[10px] font-normal uppercase tracking-[0.28em]"
-            style={{ color: "oklch(0.72 0.13 74)", fontFamily: "'Playfair Display', Georgia, serif" }}
+            style={{ color: "oklch(0.56 0.085 128)", fontFamily: "'Playfair Display', Georgia, serif" }}
           >
             Contacto
           </span>
@@ -61,11 +61,11 @@ export function ContactSection() {
             style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
           >
             Haz crecer tu{" "}
-            <span style={{ color: "oklch(0.72 0.13 74)" }}>marca</span>
+            <span style={{ color: "oklch(0.56 0.085 128)" }}>marca</span>
           </h2>
           <p
             className="mt-4 text-base font-normal leading-[1.85]"
-            style={{ color: "oklch(0.72 0.008 80)", fontFamily: "'Playfair Display', Georgia, serif" }}
+            style={{ color: "oklch(0.50 0.022 120)", fontFamily: "'Playfair Display', Georgia, serif" }}
           >
             Completa el formulario o escríbenos directo. Estamos listos para ayudarte.
           </p>
@@ -78,9 +78,9 @@ export function ContactSection() {
             className="flex w-full items-center justify-center gap-3 rounded-2xl py-4 text-base font-normal shadow-lg transition-all active:scale-[0.98]"
             style={{
               fontFamily: "'Playfair Display', Georgia, serif",
-              background: "oklch(0.14 0.016 62)",
-              color: "oklch(0.988 0.005 80)",
-              boxShadow: "0 10px 25px oklch(0.14 0.016 62 / 0.2)",
+              background: "oklch(0.27 0.022 130)",
+              color: "oklch(0.972 0.013 92)",
+              boxShadow: "0 10px 25px oklch(0.27 0.022 130 / 0.2)",
             }}
           >
             <MessageCircle className="h-5 w-5" />
@@ -88,7 +88,7 @@ export function ContactSection() {
           </button>
           <p
             className="mt-2 text-center text-xs font-normal"
-            style={{ color: "oklch(0.72 0.008 80)", fontFamily: "'Playfair Display', Georgia, serif" }}
+            style={{ color: "oklch(0.50 0.022 120)", fontFamily: "'Playfair Display', Georgia, serif" }}
           >
             Respuesta rápida y directa
           </p>
@@ -100,14 +100,14 @@ export function ContactSection() {
             <form
               onSubmit={handleSubmit}
               className="rounded-3xl border p-6 shadow-sm md:p-8 lg:p-10"
-              style={{ borderColor: "oklch(0.906 0.007 80)", backgroundColor: "oklch(0.988 0.005 80)" }}
+              style={{ borderColor: "oklch(0.89 0.018 95)", backgroundColor: "oklch(0.972 0.013 92)" }}
             >
               <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
                 <div className="space-y-2">
                   <label
                     htmlFor="name"
                     className="text-sm font-normal"
-                    style={{ color: "oklch(0.14 0.016 62)", fontFamily: "'Playfair Display', Georgia, serif" }}
+                    style={{ color: "oklch(0.27 0.022 130)", fontFamily: "'Playfair Display', Georgia, serif" }}
                   >
                     Nombre completo *
                   </label>
@@ -120,9 +120,9 @@ export function ContactSection() {
                     className="h-11 w-full rounded-xl px-4 text-sm font-normal outline-none transition-colors"
                     style={{
                       fontFamily: "'Playfair Display', Georgia, serif",
-                      border: "1px solid oklch(0.906 0.007 80)",
-                      backgroundColor: "oklch(0.988 0.005 80)",
-                      color: "oklch(0.14 0.016 62)",
+                      border: "1px solid oklch(0.89 0.018 95)",
+                      backgroundColor: "oklch(0.972 0.013 92)",
+                      color: "oklch(0.27 0.022 130)",
                     }}
                   />
                 </div>
@@ -130,7 +130,7 @@ export function ContactSection() {
                   <label
                     htmlFor="phone"
                     className="text-sm font-normal"
-                    style={{ color: "oklch(0.14 0.016 62)", fontFamily: "'Playfair Display', Georgia, serif" }}
+                    style={{ color: "oklch(0.27 0.022 130)", fontFamily: "'Playfair Display', Georgia, serif" }}
                   >
                     Teléfono / WhatsApp
                   </label>
@@ -142,9 +142,9 @@ export function ContactSection() {
                     className="h-11 w-full rounded-xl px-4 text-sm font-normal outline-none transition-colors"
                     style={{
                       fontFamily: "'Playfair Display', Georgia, serif",
-                      border: "1px solid oklch(0.906 0.007 80)",
-                      backgroundColor: "oklch(0.988 0.005 80)",
-                      color: "oklch(0.14 0.016 62)",
+                      border: "1px solid oklch(0.89 0.018 95)",
+                      backgroundColor: "oklch(0.972 0.013 92)",
+                      color: "oklch(0.27 0.022 130)",
                     }}
                   />
                 </div>
@@ -154,7 +154,7 @@ export function ContactSection() {
                 <label
                   htmlFor="company"
                   className="text-sm font-normal"
-                  style={{ color: "oklch(0.14 0.016 62)", fontFamily: "'Playfair Display', Georgia, serif" }}
+                  style={{ color: "oklch(0.27 0.022 130)", fontFamily: "'Playfair Display', Georgia, serif" }}
                 >
                   Empresa o Proyecto
                 </label>
@@ -166,9 +166,9 @@ export function ContactSection() {
                   className="h-11 w-full rounded-xl px-4 text-sm font-normal outline-none transition-colors"
                   style={{
                     fontFamily: "'Playfair Display', Georgia, serif",
-                    border: "1px solid oklch(0.906 0.007 80)",
-                    backgroundColor: "oklch(0.988 0.005 80)",
-                    color: "oklch(0.14 0.016 62)",
+                    border: "1px solid oklch(0.89 0.018 95)",
+                    backgroundColor: "oklch(0.972 0.013 92)",
+                    color: "oklch(0.27 0.022 130)",
                   }}
                 />
               </div>
@@ -177,7 +177,7 @@ export function ContactSection() {
                 <label
                   htmlFor="message"
                   className="text-sm font-normal"
-                  style={{ color: "oklch(0.14 0.016 62)", fontFamily: "'Playfair Display', Georgia, serif" }}
+                  style={{ color: "oklch(0.27 0.022 130)", fontFamily: "'Playfair Display', Georgia, serif" }}
                 >
                   ¿Cómo podemos ayudarte? *
                 </label>
@@ -191,9 +191,9 @@ export function ContactSection() {
                   className="w-full resize-none rounded-xl px-4 py-3 text-sm font-normal outline-none transition-colors"
                   style={{
                     fontFamily: "'Playfair Display', Georgia, serif",
-                    border: "1px solid oklch(0.906 0.007 80)",
-                    backgroundColor: "oklch(0.988 0.005 80)",
-                    color: "oklch(0.14 0.016 62)",
+                    border: "1px solid oklch(0.89 0.018 95)",
+                    backgroundColor: "oklch(0.972 0.013 92)",
+                    color: "oklch(0.27 0.022 130)",
                   }}
                 />
               </div>
@@ -204,16 +204,16 @@ export function ContactSection() {
                 className="mt-6 inline-flex h-12 w-full items-center justify-center gap-2 rounded-full text-base font-normal tracking-wide transition-all disabled:opacity-70"
                 style={{
                   fontFamily: "'Playfair Display', Georgia, serif",
-                  background: isSubmitting ? "oklch(0.72 0.008 80)" : "oklch(0.14 0.016 62)",
-                  color: "oklch(0.988 0.005 80)",
+                  background: isSubmitting ? "oklch(0.50 0.022 120)" : "oklch(0.27 0.022 130)",
+                  color: "oklch(0.972 0.013 92)",
                   letterSpacing: "0.05em",
-                  boxShadow: "0 10px 25px oklch(0.14 0.016 62 / 0.15)",
+                  boxShadow: "0 10px 25px oklch(0.27 0.022 130 / 0.15)",
                 }}
                 onMouseEnter={(e) => {
-                  if (!isSubmitting) e.currentTarget.style.background = "oklch(0.22 0.016 62)";
+                  if (!isSubmitting) e.currentTarget.style.background = "oklch(0.36 0.03 130)";
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.background = "oklch(0.14 0.016 62)";
+                  e.currentTarget.style.background = "oklch(0.27 0.022 130)";
                 }}
               >
                 {isSubmitting ? (
@@ -229,7 +229,7 @@ export function ContactSection() {
 
               <p
                 className="mt-3 text-center text-xs font-normal"
-                style={{ color: "oklch(0.72 0.008 80)", fontFamily: "'Playfair Display', Georgia, serif" }}
+                style={{ color: "oklch(0.50 0.022 120)", fontFamily: "'Playfair Display', Georgia, serif" }}
               >
                 Al enviar, se abrirá tu WhatsApp con los datos pre-cargados.
               </p>
@@ -240,11 +240,11 @@ export function ContactSection() {
           <div className="md:col-span-2 flex flex-col justify-center">
             <div
               className="rounded-3xl border p-6 md:p-8"
-              style={{ borderColor: "oklch(0.906 0.007 80 / 0.5)", backgroundColor: "oklch(0.988 0.005 80)" }}
+              style={{ borderColor: "oklch(0.89 0.018 95 / 0.5)", backgroundColor: "oklch(0.972 0.013 92)" }}
             >
               <h3
                 className="text-lg font-normal tracking-tight mb-6"
-                style={{ color: "oklch(0.14 0.016 62)", fontFamily: "'Playfair Display', Georgia, serif" }}
+                style={{ color: "oklch(0.27 0.022 130)", fontFamily: "'Playfair Display', Georgia, serif" }}
               >
                 Información de contacto
               </h3>
@@ -253,23 +253,23 @@ export function ContactSection() {
                 <div className="flex items-start gap-4">
                   <div
                     className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full"
-                    style={{ backgroundColor: "oklch(0.72 0.13 74 / 0.1)" }}
+                    style={{ backgroundColor: "oklch(0.56 0.085 128 / 0.1)" }}
                   >
-                    <Mail className="h-4 w-4" style={{ color: "oklch(0.72 0.13 74)" }} />
+                    <Mail className="h-4 w-4" style={{ color: "oklch(0.56 0.085 128)" }} />
                   </div>
                   <div className="min-w-0">
                     <p
                       className="text-sm font-normal"
-                      style={{ color: "oklch(0.14 0.016 62)", fontFamily: "'Playfair Display', Georgia, serif" }}
+                      style={{ color: "oklch(0.27 0.022 130)", fontFamily: "'Playfair Display', Georgia, serif" }}
                     >
                       Correo electrónico
                     </p>
                     <a
                       href="mailto:hola@agenciadigital.cu"
                       className="text-sm font-normal break-all transition-colors duration-200"
-                      style={{ color: "oklch(0.72 0.008 80)", fontFamily: "'Playfair Display', Georgia, serif" }}
-                      onMouseEnter={(e) => (e.currentTarget.style.color = "oklch(0.72 0.13 74)")}
-                      onMouseLeave={(e) => (e.currentTarget.style.color = "oklch(0.72 0.008 80)")}
+                      style={{ color: "oklch(0.50 0.022 120)", fontFamily: "'Playfair Display', Georgia, serif" }}
+                      onMouseEnter={(e) => (e.currentTarget.style.color = "oklch(0.56 0.085 128)")}
+                      onMouseLeave={(e) => (e.currentTarget.style.color = "oklch(0.50 0.022 120)")}
                     >
                       hola@agenciadigital.cu
                     </a>
@@ -279,20 +279,20 @@ export function ContactSection() {
                 <div className="flex items-start gap-4">
                   <div
                     className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full"
-                    style={{ backgroundColor: "oklch(0.72 0.13 74 / 0.1)" }}
+                    style={{ backgroundColor: "oklch(0.56 0.085 128 / 0.1)" }}
                   >
-                    <MapPin className="h-4 w-4" style={{ color: "oklch(0.72 0.13 74)" }} />
+                    <MapPin className="h-4 w-4" style={{ color: "oklch(0.56 0.085 128)" }} />
                   </div>
                   <div>
                     <p
                       className="text-sm font-normal"
-                      style={{ color: "oklch(0.14 0.016 62)", fontFamily: "'Playfair Display', Georgia, serif" }}
+                      style={{ color: "oklch(0.27 0.022 130)", fontFamily: "'Playfair Display', Georgia, serif" }}
                     >
                       Ubicación
                     </p>
                     <p
                       className="text-sm font-normal"
-                      style={{ color: "oklch(0.72 0.008 80)", fontFamily: "'Playfair Display', Georgia, serif" }}
+                      style={{ color: "oklch(0.50 0.022 120)", fontFamily: "'Playfair Display', Georgia, serif" }}
                     >
                       La Habana, Cuba
                     </p>
@@ -302,20 +302,20 @@ export function ContactSection() {
                 <div className="flex items-start gap-4">
                   <div
                     className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full"
-                    style={{ backgroundColor: "oklch(0.72 0.13 74 / 0.1)" }}
+                    style={{ backgroundColor: "oklch(0.56 0.085 128 / 0.1)" }}
                   >
-                    <Clock className="h-4 w-4" style={{ color: "oklch(0.72 0.13 74)" }} />
+                    <Clock className="h-4 w-4" style={{ color: "oklch(0.56 0.085 128)" }} />
                   </div>
                   <div>
                     <p
                       className="text-sm font-normal"
-                      style={{ color: "oklch(0.14 0.016 62)", fontFamily: "'Playfair Display', Georgia, serif" }}
+                      style={{ color: "oklch(0.27 0.022 130)", fontFamily: "'Playfair Display', Georgia, serif" }}
                     >
                       Tiempo de respuesta
                     </p>
                     <p
                       className="text-sm font-normal"
-                      style={{ color: "oklch(0.72 0.008 80)", fontFamily: "'Playfair Display', Georgia, serif" }}
+                      style={{ color: "oklch(0.50 0.022 120)", fontFamily: "'Playfair Display', Georgia, serif" }}
                     >
                       Respondemos en horario laboral
                     </p>
@@ -324,26 +324,26 @@ export function ContactSection() {
               </div>
 
               {/* Botón WhatsApp en desktop */}
-              <div className="hidden md:block mt-8 pt-6" style={{ borderTop: "1px solid oklch(0.906 0.007 80 / 0.5)" }}>
+              <div className="hidden md:block mt-8 pt-6" style={{ borderTop: "1px solid oklch(0.89 0.018 95 / 0.5)" }}>
                 <button
                   onClick={handleDirectWhatsApp}
                   className="group flex w-full items-center justify-center gap-2 rounded-xl py-3 text-sm font-normal shadow-sm transition-all"
                   style={{
                     fontFamily: "'Playfair Display', Georgia, serif",
-                    backgroundColor: "oklch(0.988 0.005 80)",
-                    color: "oklch(0.14 0.016 62)",
-                    border: "1px solid oklch(0.906 0.007 80)",
+                    backgroundColor: "oklch(0.972 0.013 92)",
+                    color: "oklch(0.27 0.022 130)",
+                    border: "1px solid oklch(0.89 0.018 95)",
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.backgroundColor = "oklch(0.72 0.13 74 / 0.06)";
-                    e.currentTarget.style.borderColor = "oklch(0.72 0.13 74)";
+                    e.currentTarget.style.backgroundColor = "oklch(0.56 0.085 128 / 0.06)";
+                    e.currentTarget.style.borderColor = "oklch(0.56 0.085 128)";
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.backgroundColor = "oklch(0.988 0.005 80)";
-                    e.currentTarget.style.borderColor = "oklch(0.906 0.007 80)";
+                    e.currentTarget.style.backgroundColor = "oklch(0.972 0.013 92)";
+                    e.currentTarget.style.borderColor = "oklch(0.89 0.018 95)";
                   }}
                 >
-                  <MessageCircle className="h-5 w-5 transition-transform group-hover:scale-110" style={{ color: "oklch(0.72 0.13 74)" }} />
+                  <MessageCircle className="h-5 w-5 transition-transform group-hover:scale-110" style={{ color: "oklch(0.56 0.085 128)" }} />
                   Iniciar chat por WhatsApp
                 </button>
               </div>
@@ -351,7 +351,7 @@ export function ContactSection() {
 
             <p
               className="mt-6 text-center text-sm font-normal md:text-left"
-              style={{ color: "oklch(0.72 0.008 80)", fontFamily: "'Playfair Display', Georgia, serif" }}
+              style={{ color: "oklch(0.50 0.022 120)", fontFamily: "'Playfair Display', Georgia, serif" }}
             >
               Tu información está segura.
             </p>

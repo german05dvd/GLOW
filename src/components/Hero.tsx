@@ -47,7 +47,7 @@ export function Hero() {
       const el = typedRef.current;
       if (!el || cancelled) return;
 
-      el.style.borderRight = "2px solid oklch(0.72 0.13 74)";
+      el.style.borderRight = "2px solid oklch(0.56 0.085 128)";
       el.style.transition   = "none";
       el.style.width        = "0px";
       el.textContent        = word.text;
@@ -55,7 +55,9 @@ export function Hero() {
       await sleep(30);
       if (cancelled) return;
 
-      const targetW = Math.min(measureText(word.text, 54) + 6, 500);
+      const fontPx  = isMobile ? 34 : 54;
+      const maxW    = isMobile ? Math.min(window.innerWidth - 80, 300) : 500;
+      const targetW = Math.min(measureText(word.text, fontPx) + 6, maxW);
       const dur     = word.text.length * 42;
       el.style.transition = `width ${dur}ms steps(${word.text.length}, end)`;
       el.style.width      = `${targetW}px`;
@@ -96,7 +98,7 @@ export function Hero() {
       cancelled = true;
       if (rafRef.current !== null) cancelAnimationFrame(rafRef.current);
     };
-  }, []);
+  }, [isMobile]);
 
   return (
     <section className="relative min-h-screen w-full overflow-hidden bg-background text-foreground">
@@ -118,7 +120,7 @@ export function Hero() {
           fontFamily: "'Playfair Display', Georgia, serif",
           fontSize: isMobile ? "clamp(100px, 28vw, 200px)" : "clamp(220px, 32vw, 520px)",
           fontWeight: 390,
-          color: "oklch(0.14 0.016 62 / 0.045)",
+          color: "oklch(0.27 0.022 130 / 0.045)",
           letterSpacing: "-0.04em",
           whiteSpace: "nowrap",
           top: isMobile ? "18%" : "30%",
@@ -129,11 +131,43 @@ export function Hero() {
         glow
       </div>
 
-      {/* Main content — padding-left aumentado para empujar el texto
-          un poco a la derecha, pero menos que el watermark. */}
+      {/* Decoración geométrica sutil — círculos y polígonos en oliva/terracota */}
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden">
+        <div
+          className="absolute rounded-full border"
+          style={{
+            top: "12%", right: "-6%", width: "42vw", maxWidth: 460, aspectRatio: "1",
+            borderColor: "oklch(0.56 0.085 128 / 0.18)",
+          }}
+        />
+        <div
+          className="absolute rounded-full border"
+          style={{
+            top: "20%", right: "4%", width: "26vw", maxWidth: 280, aspectRatio: "1",
+            borderColor: "oklch(0.62 0.12 48 / 0.16)",
+          }}
+        />
+        <svg
+          className="absolute"
+          style={{ bottom: "16%", left: "6%", width: "min(22vw,150px)", color: "oklch(0.56 0.085 128 / 0.16)" }}
+          viewBox="0 0 100 100" fill="none"
+        >
+          <path d="M50 4 L88 27 L88 73 L50 96 L12 73 L12 27 Z" stroke="currentColor" strokeWidth="1.4" />
+        </svg>
+        <div
+          className="absolute"
+          style={{
+            bottom: "26%", right: "12%", width: "min(16vw,90px)", aspectRatio: "1",
+            backgroundColor: "oklch(0.62 0.12 48 / 0.12)",
+            borderRadius: "30% 70% 70% 30% / 30% 30% 70% 70%",
+          }}
+        />
+      </div>
+
+      {/* Main content — padding responsive, contenido empujado ligeramente a la derecha. */}
       <div
-        className="relative z-10 flex min-h-screen flex-col justify-start px-12 sm:px-20 md:px-28 lg:px-36 pb-11"
-        style={{ paddingTop: "calc(52px + 14vh)" }}
+        className="relative z-10 flex min-h-screen flex-col justify-center px-6 sm:px-12 md:px-20 lg:px-28 pb-16"
+        style={{ paddingTop: "calc(64px + 8vh)" }}
       >
 
         {/* Eyebrow */}
@@ -143,11 +177,11 @@ export function Hero() {
         >
           <span
             className="h-px w-6 flex-none"
-            style={{ backgroundColor: "oklch(0.72 0.13 74)" }}
+            style={{ backgroundColor: "oklch(0.56 0.085 128)" }}
           />
           <span
             className="text-[10px] font-normal tracking-[0.28em] uppercase"
-            style={{ color: "oklch(0.72 0.13 74)" }}
+            style={{ color: "oklch(0.56 0.085 128)" }}
           >
             Identidad · Posicionamiento · La Habana
           </span>
@@ -194,10 +228,10 @@ export function Hero() {
                 fontSize: "clamp(2.4rem, 5vw, 3.5rem)",
                 fontWeight: 400,
                 fontStyle: "italic",
-                color: "oklch(0.72 0.13 74)",
+                color: "oklch(0.56 0.085 128)",
                 lineHeight: 1.08,
                 letterSpacing: "-0.02em",
-                borderRight: "2px solid oklch(0.72 0.13 74)",
+                borderRight: "2px solid oklch(0.56 0.085 128)",
                 width: 0,
               }}
             />
@@ -211,11 +245,11 @@ export function Hero() {
         >
           <span
             className="h-px w-10 flex-none opacity-40"
-            style={{ backgroundColor: "oklch(0.72 0.13 74)" }}
+            style={{ backgroundColor: "oklch(0.56 0.085 128)" }}
           />
           <span
             className="h-[3px] w-[3px] rounded-full opacity-50 flex-none"
-            style={{ backgroundColor: "oklch(0.72 0.13 74)" }}
+            style={{ backgroundColor: "oklch(0.56 0.085 128)" }}
           />
         </div>
 
@@ -238,18 +272,18 @@ export function Hero() {
             onClick={(e) => { e.preventDefault(); jumpTo("contacto"); }}
             className="inline-flex items-center gap-2 rounded-md px-7 py-3 text-sm font-normal tracking-wide transition-colors duration-200"
             style={{
-              background: "oklch(0.14 0.016 62)",
-              color: "oklch(0.988 0.005 80)",
+              background: "oklch(0.27 0.022 130)",
+              color: "oklch(0.972 0.013 92)",
               letterSpacing: "0.05em",
             }}
-            onMouseEnter={(e) => (e.currentTarget.style.background = "oklch(0.22 0.016 62)")}
-            onMouseLeave={(e) => (e.currentTarget.style.background = "oklch(0.14 0.016 62)")}
+            onMouseEnter={(e) => (e.currentTarget.style.background = "oklch(0.36 0.03 130)")}
+            onMouseLeave={(e) => (e.currentTarget.style.background = "oklch(0.27 0.022 130)")}
           >
             Hablemos
             <svg width="13" height="13" viewBox="0 0 14 14" fill="none">
               <path
                 d="M2.5 7h9M7.5 3.5L11 7l-3.5 3.5"
-                stroke="oklch(0.988 0.005 80)"
+                stroke="oklch(0.972 0.013 92)"
                 strokeWidth="1.2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -264,18 +298,18 @@ export function Hero() {
             style={{ letterSpacing: "0.05em" }}
           >
             Ver servicios
-            <span style={{ color: "oklch(0.72 0.13 74)", fontSize: "1rem" }}>→</span>
+            <span style={{ color: "oklch(0.56 0.085 128)", fontSize: "1rem" }}>→</span>
           </a>
         </div>
       </div>
 
       {/* Bottom services strip */}
       <div
-        className="absolute bottom-0 left-0 right-0 flex items-center gap-8 border-t px-12 sm:px-20 md:px-28 lg:px-36 overflow-x-auto scrollbar-none"
+        className="absolute bottom-0 left-0 right-0 flex items-center gap-6 sm:gap-8 border-t px-6 sm:px-12 md:px-20 lg:px-28 overflow-x-auto scrollbar-none"
         style={{
           height: "44px",
-          borderColor: "oklch(0.906 0.007 80)",
-          backgroundColor: "oklch(0.988 0.005 80)",
+          borderColor: "oklch(0.89 0.018 95)",
+          backgroundColor: "oklch(0.972 0.013 92)",
           animation: "hero-fade-up 0.5s ease 2.4s both",
         }}
       >
@@ -289,13 +323,13 @@ export function Hero() {
             {!accent && (
               <span
                 className="h-1 w-1 rounded-full flex-none opacity-50"
-                style={{ backgroundColor: "oklch(0.72 0.13 74)" }}
+                style={{ backgroundColor: "oklch(0.56 0.085 128)" }}
               />
             )}
             <span
               className="text-[10px] font-normal tracking-[0.2em] uppercase"
               style={{
-                color: accent ? "oklch(0.72 0.13 74)" : "oklch(0.72 0.008 80)",
+                color: accent ? "oklch(0.56 0.085 128)" : "oklch(0.50 0.022 120)",
                 opacity: accent ? 0.8 : 1,
               }}
             >

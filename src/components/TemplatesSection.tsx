@@ -71,7 +71,7 @@ function PatternOverlay({ pattern }: { pattern: TemplateItem["pattern"] }) {
       <svg className="absolute inset-0 h-full w-full" aria-hidden="true">
         <defs>
           <pattern id="lines-pat" width="14" height="14" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
-            <line x1="0" y1="0" x2="0" y2="14" stroke="oklch(0.74 0.11 78)" strokeWidth="1" strokeOpacity="0.35" />
+            <line x1="0" y1="0" x2="0" y2="14" stroke="oklch(0.56 0.085 128)" strokeWidth="1" strokeOpacity="0.35" />
           </pattern>
         </defs>
         <rect width="100%" height="100%" fill="url(#lines-pat)" />
@@ -84,7 +84,7 @@ function PatternOverlay({ pattern }: { pattern: TemplateItem["pattern"] }) {
         className="absolute inset-0 opacity-60"
         style={{
           backgroundImage:
-            "radial-gradient(oklch(0.74 0.11 78 / 0.35) 1.2px, transparent 1.2px)",
+            "radial-gradient(oklch(0.56 0.085 128 / 0.35) 1.2px, transparent 1.2px)",
           backgroundSize: "14px 14px",
         }}
       />
@@ -96,7 +96,7 @@ function PatternOverlay({ pattern }: { pattern: TemplateItem["pattern"] }) {
         className="absolute inset-0 opacity-30"
         style={{
           backgroundImage:
-            "linear-gradient(oklch(0.74 0.11 78 / 0.5) 1px, transparent 1px), linear-gradient(90deg, oklch(0.74 0.11 78 / 0.5) 1px, transparent 1px)",
+            "linear-gradient(oklch(0.56 0.085 128 / 0.5) 1px, transparent 1px), linear-gradient(90deg, oklch(0.56 0.085 128 / 0.5) 1px, transparent 1px)",
           backgroundSize: "20px 20px",
         }}
       />
@@ -106,12 +106,12 @@ function PatternOverlay({ pattern }: { pattern: TemplateItem["pattern"] }) {
     <svg className="absolute inset-0 h-full w-full" viewBox="0 0 200 160" preserveAspectRatio="none" aria-hidden="true">
       <path
         d="M -10 80 Q 50 20, 110 60 T 220 50 L 220 170 L -10 170 Z"
-        fill="oklch(0.74 0.11 78)"
+        fill="oklch(0.56 0.085 128)"
         fillOpacity="0.18"
       />
       <path
         d="M -10 110 Q 60 70, 130 100 T 220 90 L 220 170 L -10 170 Z"
-        fill="oklch(0.74 0.11 78)"
+        fill="oklch(0.56 0.085 128)"
         fillOpacity="0.12"
       />
     </svg>
@@ -125,7 +125,7 @@ export function TemplatesSection() {
         <div className="mb-16 text-center">
           <span
             className="text-[10px] font-normal uppercase tracking-[0.28em]"
-            style={{ color: "oklch(0.72 0.13 74)", fontFamily: "'Playfair Display', Georgia, serif" }}
+            style={{ color: "oklch(0.56 0.085 128)", fontFamily: "'Playfair Display', Georgia, serif" }}
           >
             Plantillas & Kits
           </span>
@@ -134,11 +134,11 @@ export function TemplatesSection() {
             style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
           >
             Empieza más rápido con un{" "}
-            <span style={{ color: "oklch(0.72 0.13 74)" }}>kit de inicio</span>
+            <span style={{ color: "oklch(0.56 0.085 128)" }}>kit de inicio</span>
           </h2>
           <p
             className="mx-auto mt-4 max-w-xl text-sm font-normal leading-[1.85]"
-            style={{ color: "oklch(0.72 0.008 80)", fontFamily: "'Playfair Display', Georgia, serif" }}
+            style={{ color: "oklch(0.50 0.022 120)", fontFamily: "'Playfair Display', Georgia, serif" }}
           >
             Elige una plantilla adaptada a tu negocio y ten tu catálogo online en horas, no en semanas.
           </p>
@@ -152,14 +152,14 @@ export function TemplatesSection() {
                   key={t.id}
                   className="group relative overflow-hidden rounded-2xl bg-card transition-all duration-300 hover:-translate-y-1 hover:shadow-xl md:col-span-2 md:row-span-2"
                   style={{
-                    border: "2px solid oklch(0.72 0.13 74)",
-                    boxShadow: "0 0 0 1px oklch(0.72 0.13 74 / 0.15), 0 20px 40px oklch(0.14 0.016 62 / 0.08)",
+                    border: "2px solid oklch(0.56 0.085 128)",
+                    boxShadow: "0 0 0 1px oklch(0.56 0.085 128 / 0.15), 0 20px 40px oklch(0.27 0.022 130 / 0.08)",
                   }}
                 >
                   {/* Línea dorada superior */}
                   <div
                     className="absolute left-0 right-0 top-0 h-1 z-20"
-                    style={{ backgroundColor: "oklch(0.72 0.13 74)" }}
+                    style={{ backgroundColor: "oklch(0.56 0.085 128)" }}
                   />
 
                   {t.badge && (
@@ -168,9 +168,9 @@ export function TemplatesSection() {
                         className="inline-flex items-center gap-1.5 rounded-full px-4 py-1.5 text-[11px] font-normal uppercase tracking-wider"
                         style={{
                           fontFamily: "'Playfair Display', Georgia, serif",
-                          backgroundColor: "oklch(0.72 0.13 74)",
-                          color: "oklch(0.14 0.016 62)",
-                          boxShadow: "0 4px 12px oklch(0.72 0.13 74 / 0.3)",
+                          backgroundColor: "oklch(0.56 0.085 128)",
+                          color: "oklch(0.98 0.01 92)",
+                          boxShadow: "0 4px 12px oklch(0.56 0.085 128 / 0.3)",
                         }}
                       >
                         <span className="h-1.5 w-1.5 rounded-full bg-white animate-pulse" />
@@ -196,12 +196,12 @@ export function TemplatesSection() {
                     <div className={`h-52 w-full ${t.tint}`} />
                   )}
 
-                  <div className="border-t p-6 md:p-8" style={{ borderColor: "oklch(0.906 0.007 80)" }}>
+                  <div className="border-t p-6 md:p-8" style={{ borderColor: "oklch(0.89 0.018 95)" }}>
                     <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
                       <div className="flex-1">
                         <p
                           className="text-[10px] font-normal uppercase tracking-wider"
-                          style={{ color: "oklch(0.72 0.13 74)", fontFamily: "'Playfair Display', Georgia, serif" }}
+                          style={{ color: "oklch(0.56 0.085 128)", fontFamily: "'Playfair Display', Georgia, serif" }}
                         >
                           {t.category}
                         </p>
@@ -213,7 +213,7 @@ export function TemplatesSection() {
                         </h3>
                         <p
                           className="mt-2 max-w-lg text-sm font-normal leading-[1.85]"
-                          style={{ color: "oklch(0.72 0.008 80)", fontFamily: "'Playfair Display', Georgia, serif" }}
+                          style={{ color: "oklch(0.50 0.022 120)", fontFamily: "'Playfair Display', Georgia, serif" }}
                         >
                           {t.description}
                         </p>
@@ -225,8 +225,8 @@ export function TemplatesSection() {
                         className="inline-flex shrink-0 items-center gap-2 rounded-lg px-6 py-3 text-sm font-normal shadow transition-transform hover:scale-105"
                         style={{
                           fontFamily: "'Playfair Display', Georgia, serif",
-                          backgroundColor: "oklch(0.14 0.016 62)",
-                          color: "oklch(0.988 0.005 80)",
+                          backgroundColor: "oklch(0.27 0.022 130)",
+                          color: "oklch(0.972 0.013 92)",
                         }}
                       >
                         Ver Demo
@@ -242,7 +242,7 @@ export function TemplatesSection() {
               <div
                 key={t.id}
                 className="group relative overflow-hidden rounded-2xl border bg-card transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
-                style={{ borderColor: "oklch(0.906 0.007 80)" }}
+                style={{ borderColor: "oklch(0.89 0.018 95)" }}
               >
                 <div className={`relative h-40 w-full overflow-hidden ${t.tint}`}>
                   <PatternOverlay pattern={t.pattern} />
@@ -252,8 +252,8 @@ export function TemplatesSection() {
                         className="inline-flex items-center rounded-full px-2.5 py-0.5 text-[10px] font-normal uppercase tracking-wider"
                         style={{
                           fontFamily: "'Playfair Display', Georgia, serif",
-                          backgroundColor: "oklch(0.72 0.13 74)",
-                          color: "oklch(0.14 0.016 62)",
+                          backgroundColor: "oklch(0.56 0.085 128)",
+                          color: "oklch(0.98 0.01 92)",
                         }}
                       >
                         {t.badge}
@@ -265,7 +265,7 @@ export function TemplatesSection() {
                 <div className="p-5 pb-2">
                   <p
                     className="text-[11px] font-normal uppercase tracking-wider"
-                    style={{ color: "oklch(0.72 0.008 80)", fontFamily: "'Playfair Display', Georgia, serif" }}
+                    style={{ color: "oklch(0.50 0.022 120)", fontFamily: "'Playfair Display', Georgia, serif" }}
                   >
                     {t.category}
                   </p>
@@ -280,7 +280,7 @@ export function TemplatesSection() {
                 <div className="space-y-4 p-5 pt-0">
                   <p
                     className="line-clamp-2 text-sm font-normal leading-[1.85]"
-                    style={{ color: "oklch(0.72 0.008 80)", fontFamily: "'Playfair Display', Georgia, serif" }}
+                    style={{ color: "oklch(0.50 0.022 120)", fontFamily: "'Playfair Display', Georgia, serif" }}
                   >
                     {t.description}
                   </p>
@@ -288,19 +288,19 @@ export function TemplatesSection() {
                     className="inline-flex w-full items-center justify-center gap-2 rounded-lg border px-4 py-2 text-sm font-normal transition-colors duration-200"
                     style={{
                       fontFamily: "'Playfair Display', Georgia, serif",
-                      borderColor: "oklch(0.906 0.007 80)",
-                      color: "oklch(0.14 0.016 62)",
+                      borderColor: "oklch(0.89 0.018 95)",
+                      color: "oklch(0.27 0.022 130)",
                       backgroundColor: "transparent",
                     }}
                     onMouseEnter={(e) => {
-                      e.currentTarget.style.backgroundColor = "oklch(0.72 0.13 74)";
-                      e.currentTarget.style.color = "oklch(0.14 0.016 62)";
-                      e.currentTarget.style.borderColor = "oklch(0.72 0.13 74)";
+                      e.currentTarget.style.backgroundColor = "oklch(0.56 0.085 128)";
+                      e.currentTarget.style.color = "oklch(0.98 0.01 92)";
+                      e.currentTarget.style.borderColor = "oklch(0.56 0.085 128)";
                     }}
                     onMouseLeave={(e) => {
                       e.currentTarget.style.backgroundColor = "transparent";
-                      e.currentTarget.style.color = "oklch(0.14 0.016 62)";
-                      e.currentTarget.style.borderColor = "oklch(0.906 0.007 80)";
+                      e.currentTarget.style.color = "oklch(0.27 0.022 130)";
+                      e.currentTarget.style.borderColor = "oklch(0.89 0.018 95)";
                     }}
                   >
                     Ver Demo
@@ -317,19 +317,19 @@ export function TemplatesSection() {
             className="inline-flex items-center gap-2 rounded-full border px-8 py-3 text-sm font-normal transition-all duration-200"
             style={{
               fontFamily: "'Playfair Display', Georgia, serif",
-              borderColor: "oklch(0.906 0.007 80)",
-              color: "oklch(0.14 0.016 62)",
+              borderColor: "oklch(0.89 0.018 95)",
+              color: "oklch(0.27 0.022 130)",
               backgroundColor: "transparent",
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = "oklch(0.72 0.13 74)";
-              e.currentTarget.style.color = "oklch(0.14 0.016 62)";
-              e.currentTarget.style.borderColor = "oklch(0.72 0.13 74)";
+              e.currentTarget.style.backgroundColor = "oklch(0.56 0.085 128)";
+              e.currentTarget.style.color = "oklch(0.98 0.01 92)";
+              e.currentTarget.style.borderColor = "oklch(0.56 0.085 128)";
             }}
             onMouseLeave={(e) => {
               e.currentTarget.style.backgroundColor = "transparent";
-              e.currentTarget.style.color = "oklch(0.14 0.016 62)";
-              e.currentTarget.style.borderColor = "oklch(0.906 0.007 80)";
+              e.currentTarget.style.color = "oklch(0.27 0.022 130)";
+              e.currentTarget.style.borderColor = "oklch(0.89 0.018 95)";
             }}
           >
             Explorar todas las plantillas (+12 disponibles)
