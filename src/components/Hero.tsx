@@ -135,8 +135,8 @@ export function Hero() {
 
       {/* Main content */}
       <div
-        className="relative z-10 flex min-h-screen flex-col justify-start px-12 sm:px-20 md:px-28 lg:px-36 pb-11"
-        style={{ paddingTop: "calc(52px + 14vh)" }}
+        className="relative z-10 flex min-h-screen flex-col justify-center px-12 sm:px-20 md:px-28 lg:px-36 pb-24"
+        style={{ paddingTop: "calc(52px + 8vh)" }}
       >
 
         {/* Eyebrow */}
@@ -274,6 +274,30 @@ export function Hero() {
             <span style={{ color: ACCENT, fontSize: "1rem" }}>→</span>
           </a>
         </div>
+      </div>
+
+      {/* Scroll indicator */}
+      <div
+        aria-hidden="true"
+        className="absolute left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5"
+        style={{
+          bottom: "56px",
+          animation: "hero-fade-up 0.5s ease 2.6s both",
+          opacity: 0.45,
+        }}
+      >
+        <span
+          className="text-[9px] uppercase tracking-[0.22em]"
+          style={{ color: "oklch(0.46 0.022 70)", fontFamily: "'Inter', sans-serif" }}
+        >
+          scroll
+        </span>
+        <div
+          className="h-6 w-px rounded-full"
+          style={{
+            background: `linear-gradient(to bottom, oklch(0.50 0.085 142), transparent)`,
+          }}
+        />
       </div>
 
       {/* Bottom services strip */}

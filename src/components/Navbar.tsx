@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Menu, X, MessageCircle, Home } from "lucide-react";
+import { Menu, X, MessageCircle } from "lucide-react";
 
 const links = [
   { label: "Servicios", href: "#servicios" },
@@ -52,23 +52,40 @@ export function Navbar() {
       }}
     >
       <div className="mx-auto flex h-16 max-w-7xl items-center px-8 md:px-12 lg:px-16">
-        {/* Izquierda: Inicio */}
+        {/* Izquierda: Wordmark */}
         <div className="flex flex-1 items-center justify-start">
           <a
             href="#"
-            className="group inline-flex items-center gap-2 transition-colors duration-200"
-            style={{
-              fontFamily: FONT_DISPLAY,
-              fontSize: "1.3rem",
-              color: FOREGROUND,
-              fontWeight: 400,
-            }}
+            className="inline-flex items-baseline gap-0.5 transition-opacity duration-200 hover:opacity-80"
+            aria-label="Glow Agencia — ir al inicio"
           >
-            <Home
-              className="h-5 w-5 transition-transform duration-300 group-hover:scale-110"
-              style={{ color: PRIMARY }}
-            />
-            <span className="tracking-tight">Inicio</span>
+            <span
+              style={{
+                fontFamily: FONT_DISPLAY,
+                fontSize: "1.55rem",
+                fontWeight: 400,
+                letterSpacing: "-0.03em",
+                color: FOREGROUND,
+                lineHeight: 1,
+              }}
+            >
+              glow
+            </span>
+            <span
+              style={{
+                fontFamily: FONT_DISPLAY,
+                fontSize: "0.6rem",
+                fontWeight: 400,
+                letterSpacing: "0.22em",
+                color: ACCENT,
+                textTransform: "uppercase",
+                marginLeft: "0.35rem",
+                marginBottom: "0.1rem",
+                lineHeight: 1,
+              }}
+            >
+              agencia
+            </span>
           </a>
         </div>
 

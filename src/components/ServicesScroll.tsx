@@ -269,7 +269,7 @@ function MobileServiceCard({ service }: { service: (typeof services)[number] }) 
         style={{
           height: "260px",
           borderColor: "oklch(0.880 0.018 82)",
-          backgroundColor: "oklch(0.968 0.012 85)",
+          backgroundColor: "oklch(0.920 0.014 82)",
         }}
       >
         <div
@@ -283,7 +283,7 @@ function MobileServiceCard({ service }: { service: (typeof services)[number] }) 
       </div>
 
       {/* Texto abajo */}
-      <div className="relative flex flex-col gap-4 p-6 bg-background overflow-hidden">
+      <div className="relative flex flex-col gap-4 p-6 bg-card overflow-hidden">
         {/* Ornament de fondo */}
         <div className="absolute -right-4 -bottom-4 opacity-80 pointer-events-none">
           <TextOrnament number={service.number} />
@@ -409,7 +409,7 @@ export function ServicesScroll() {
                   style={{ borderColor: "oklch(0.880 0.018 82)" }}
                 >
                   {/* Left: text */}
-                  <div className="relative flex w-1/2 flex-col justify-between p-8 md:p-12 overflow-hidden bg-background">
+                  <div className="relative flex w-1/2 flex-col justify-between p-8 md:p-12 overflow-hidden bg-card">
                     <div className="absolute inset-0 opacity-[0.06] pointer-events-none"
                       style={{
                         backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='90' height='78' viewBox='0 0 90 78'%3E%3Cpath d='M22.5 2L67.5 2L88 39L67.5 76L22.5 76L2 39Z' fill='none' stroke='%236b8f6e' stroke-width='1' stroke-opacity='0.5'/%3E%3C/svg%3E")`,
@@ -458,7 +458,7 @@ export function ServicesScroll() {
                   </div>
 
                   {/* Right: visual */}
-                  <div className="relative w-1/2 border-l" style={{ borderColor: "oklch(0.880 0.018 82)", backgroundColor: "oklch(0.968 0.012 85)" }}>
+                  <div className="relative w-1/2 border-l" style={{ borderColor: "oklch(0.880 0.018 82)", backgroundColor: "oklch(0.920 0.014 82)" }}>
                     <div
                       className="absolute inset-0 opacity-[0.04]"
                       style={{
