@@ -240,7 +240,7 @@ export function ContactSection() {
           <div className="md:col-span-2 flex flex-col justify-center">
             <div
               className="rounded-3xl border p-6 md:p-8"
-              style={{ borderColor: "oklch(0.906 0.007 80 / 0.5)", backgroundColor: "oklch(0.968 0.012 85)" }}
+              style={{ borderColor: "oklch(0.880 0.018 82 / 0.6)", backgroundColor: "oklch(0.968 0.012 85)" }}
             >
               <h3
                 className="text-lg font-normal tracking-tight mb-6"
@@ -324,7 +324,7 @@ export function ContactSection() {
               </div>
 
               {/* Botón WhatsApp en desktop */}
-              <div className="hidden md:block mt-8 pt-6" style={{ borderTop: "1px solid oklch(0.906 0.007 80 / 0.5)" }}>
+              <div className="hidden md:block mt-8 pt-6"               style={{ borderTop: "1px solid oklch(0.880 0.018 82 / 0.6)" }}>
                 <button
                   onClick={handleDirectWhatsApp}
                   className="group flex w-full items-center justify-center gap-2 rounded-xl py-3 text-sm font-normal shadow-sm transition-all"
