@@ -11,6 +11,14 @@ const links = [
 
 const WHATSAPP_PHONE = "5355114938";
 
+const FONT_DISPLAY = "'Cormorant Garamond', Georgia, serif";
+const ACCENT       = "oklch(0.50 0.085 142)";
+const PRIMARY      = "oklch(0.35 0.076 148)";
+const FOREGROUND   = "oklch(0.18 0.022 62)";
+const BG           = "oklch(0.968 0.012 85)";
+const BORDER       = "oklch(0.880 0.018 82)";
+const MUTED_FG     = "oklch(0.46 0.022 70)";
+
 export function Navbar() {
   const [open, setOpen] = useState(false);
   const [hideWhatsApp, setHideWhatsApp] = useState(false);
@@ -37,8 +45,11 @@ export function Navbar() {
 
   return (
     <header
-      className="fixed top-0 left-0 z-50 w-full bg-background/80 backdrop-blur-md"
-      style={{ borderBottom: "1px solid oklch(0.906 0.007 80 / 0.5)" }}
+      className="fixed top-0 left-0 z-50 w-full backdrop-blur-md"
+      style={{
+        backgroundColor: `${BG}e6`,
+        borderBottom: `1px solid ${BORDER}`,
+      }}
     >
       <div className="mx-auto flex h-16 max-w-7xl items-center px-8 md:px-12 lg:px-16">
         {/* Izquierda: Inicio */}
@@ -47,20 +58,21 @@ export function Navbar() {
             href="#"
             className="group inline-flex items-center gap-2 transition-colors duration-200"
             style={{
-              fontFamily: "'Playfair Display', Georgia, serif",
-              fontSize: "1.25rem",
-              color: "oklch(0.14 0.016 62)",
+              fontFamily: FONT_DISPLAY,
+              fontSize: "1.3rem",
+              color: FOREGROUND,
+              fontWeight: 400,
             }}
           >
             <Home
-              className="h-6 w-6 transition-transform duration-300 group-hover:scale-110"
-              style={{ color: "oklch(0.72 0.13 74)" }}
+              className="h-5 w-5 transition-transform duration-300 group-hover:scale-110"
+              style={{ color: PRIMARY }}
             />
-            <span className="font-normal tracking-tight">Inicio</span>
+            <span className="tracking-tight">Inicio</span>
           </a>
         </div>
 
-        {/* Centro: Links planos, sin cajas, sin negritas */}
+        {/* Centro: Links */}
         <nav className="hidden md:flex items-center gap-10">
           {links.map((link) => (
             <a
@@ -68,16 +80,16 @@ export function Navbar() {
               href={link.href}
               className="font-normal transition-colors duration-200"
               style={{
-                fontFamily: "'Playfair Display', Georgia, serif",
-                fontSize: "0.875rem",
-                color: "oklch(0.72 0.008 80)",
+                fontFamily: FONT_DISPLAY,
+                fontSize: "0.95rem",
+                color: MUTED_FG,
                 letterSpacing: "0.04em",
               }}
               onMouseEnter={(e) =>
-                (e.currentTarget.style.color = "oklch(0.14 0.016 62)")
+                (e.currentTarget.style.color = FOREGROUND)
               }
               onMouseLeave={(e) =>
-                (e.currentTarget.style.color = "oklch(0.72 0.008 80)")
+                (e.currentTarget.style.color = MUTED_FG)
               }
             >
               {link.label}
@@ -97,14 +109,15 @@ export function Navbar() {
             onClick={handleWhatsAppClick}
             className="inline-flex items-center gap-2 rounded-full px-5 py-2 text-sm font-normal transition-colors duration-200"
             style={{
-              fontFamily: "'Playfair Display', Georgia, serif",
-              border: "1px solid oklch(0.72 0.13 74)",
-              color: "oklch(0.72 0.13 74)",
+              fontFamily: FONT_DISPLAY,
+              border: `1px solid ${PRIMARY}`,
+              color: PRIMARY,
               background: "transparent",
               letterSpacing: "0.04em",
+              fontSize: "0.9rem",
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.background = "oklch(0.72 0.13 74 / 0.06)";
+              e.currentTarget.style.background = `oklch(0.35 0.076 148 / 0.08)`;
             }}
             onMouseLeave={(e) => {
               e.currentTarget.style.background = "transparent";
@@ -121,7 +134,7 @@ export function Navbar() {
         <button
           onClick={() => setOpen((v) => !v)}
           className="inline-flex h-10 w-10 items-center justify-center rounded-md md:hidden"
-          style={{ color: "oklch(0.14 0.016 62)" }}
+          style={{ color: FOREGROUND }}
           aria-label="Abrir menú"
         >
           {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -131,8 +144,11 @@ export function Navbar() {
       {/* Mobile menu */}
       {open && (
         <div
-          className="bg-background px-8 py-6 md:hidden"
-          style={{ borderTop: "1px solid oklch(0.906 0.007 80 / 0.5)" }}
+          className="px-8 py-6 md:hidden"
+          style={{
+            borderTop: `1px solid ${BORDER}`,
+            backgroundColor: BG,
+          }}
         >
           <nav className="flex flex-col gap-4">
             {links.map((link) => (
@@ -142,16 +158,16 @@ export function Navbar() {
                 onClick={() => setOpen(false)}
                 className="font-normal transition-colors duration-200"
                 style={{
-                  fontFamily: "'Playfair Display', Georgia, serif",
-                  fontSize: "1rem",
-                  color: "oklch(0.72 0.008 80)",
+                  fontFamily: FONT_DISPLAY,
+                  fontSize: "1.05rem",
+                  color: MUTED_FG,
                   letterSpacing: "0.04em",
                 }}
                 onMouseEnter={(e) =>
-                  (e.currentTarget.style.color = "oklch(0.14 0.016 62)")
+                  (e.currentTarget.style.color = FOREGROUND)
                 }
                 onMouseLeave={(e) =>
-                  (e.currentTarget.style.color = "oklch(0.72 0.008 80)")
+                  (e.currentTarget.style.color = MUTED_FG)
                 }
               >
                 {link.label}
@@ -172,14 +188,14 @@ export function Navbar() {
                 onClick={handleWhatsAppClick}
                 className="inline-flex w-full items-center justify-center gap-2 rounded-full px-5 py-2.5 text-sm font-normal transition-colors duration-200"
                 style={{
-                  fontFamily: "'Playfair Display', Georgia, serif",
-                  border: "1px solid oklch(0.72 0.13 74)",
-                  color: "oklch(0.72 0.13 74)",
+                  fontFamily: FONT_DISPLAY,
+                  border: `1px solid ${PRIMARY}`,
+                  color: PRIMARY,
                   background: "transparent",
                   letterSpacing: "0.04em",
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.background = "oklch(0.72 0.13 74 / 0.06)";
+                  e.currentTarget.style.background = `oklch(0.35 0.076 148 / 0.08)`;
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.background = "transparent";

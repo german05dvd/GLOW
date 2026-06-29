@@ -194,7 +194,7 @@ function WebsiteVisual() {
 
 function TextOrnament({ number }: { number: string }) {
   return (
-    <svg viewBox="0 0 120 120" className="h-24 w-24" style={{ color: "oklch(0.72 0.13 74 / 0.3)" }} aria-hidden="true">
+    <svg viewBox="0 0 120 120" className="h-24 w-24" style={{ color: "oklch(0.50 0.085 142 / 0.35)" }} aria-hidden="true">
       <circle cx="60" cy="60" r="50" fill="none" stroke="currentColor" strokeWidth="0.5" strokeDasharray="2 4" />
       <circle cx="60" cy="60" r="35" fill="none" stroke="currentColor" strokeWidth="0.5" />
       <text
@@ -206,7 +206,7 @@ function TextOrnament({ number }: { number: string }) {
         fill="none"
         stroke="currentColor"
         strokeWidth="0.8"
-        fontFamily="'Playfair Display', Georgia, serif"
+        fontFamily="'Cormorant Garamond', Georgia, serif"
       >
         {number}
       </text>
@@ -261,15 +261,15 @@ function MobileServiceCard({ service }: { service: (typeof services)[number] }) 
   return (
     <article
       className="overflow-hidden rounded-3xl border shadow-xl"
-      style={{ borderColor: "oklch(0.906 0.007 80)" }}
+      style={{ borderColor: "oklch(0.880 0.018 82)" }}
     >
       {/* Visual arriba */}
       <div
         className="relative w-full border-b"
         style={{
           height: "260px",
-          borderColor: "oklch(0.906 0.007 80)",
-          backgroundColor: "oklch(0.988 0.005 80)",
+          borderColor: "oklch(0.880 0.018 82)",
+          backgroundColor: "oklch(0.968 0.012 85)",
         }}
       >
         <div
@@ -292,16 +292,16 @@ function MobileServiceCard({ service }: { service: (typeof services)[number] }) 
         <div className="relative flex items-center justify-between">
           <span
             className="text-sm font-normal"
-            style={{ color: "oklch(0.72 0.008 80)", fontFamily: "'Playfair Display', Georgia, serif" }}
+            style={{ color: "oklch(0.46 0.022 70)", fontFamily: "'Cormorant Garamond', Georgia, serif" }}
           >
             {service.number} / 03
           </span>
           <span
             className="rounded-full px-3 py-1 text-[10px] font-normal uppercase tracking-wider"
             style={{
-              border: "1px solid oklch(0.906 0.007 80)",
-              color: "oklch(0.72 0.008 80)",
-              fontFamily: "'Playfair Display', Georgia, serif",
+              border: "1px solid oklch(0.880 0.018 82)",
+              color: "oklch(0.46 0.022 70)",
+              fontFamily: "'Cormorant Garamond', Georgia, serif",
             }}
           >
             {service.tag}
@@ -311,19 +311,19 @@ function MobileServiceCard({ service }: { service: (typeof services)[number] }) 
         <div className="relative">
           <h3
             className="text-2xl font-normal tracking-tight text-foreground"
-            style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
+            style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}
           >
             {service.title}
           </h3>
           <p
             className="mt-3 text-sm font-normal leading-[1.85]"
-            style={{ color: "oklch(0.72 0.008 80)", fontFamily: "'Playfair Display', Georgia, serif" }}
+            style={{ color: "oklch(0.46 0.022 70)", fontFamily: "'Cormorant Garamond', Georgia, serif" }}
           >
             {service.description}
           </p>
         </div>
 
-        <div className="relative h-px w-12 rounded-full" style={{ backgroundColor: "oklch(0.72 0.13 74)" }} />
+        <div className="relative h-px w-12 rounded-full" style={{ backgroundColor: "oklch(0.50 0.085 142)" }} />
       </div>
     </article>
   );
@@ -351,16 +351,16 @@ export function ServicesScroll() {
         <div className="mb-10">
           <span
             className="text-[10px] font-normal uppercase tracking-[0.28em]"
-            style={{ color: "oklch(0.72 0.13 74)", fontFamily: "'Playfair Display', Georgia, serif" }}
+            style={{ color: "oklch(0.50 0.085 142)", fontFamily: "'Cormorant Garamond', Georgia, serif" }}
           >
             Nuestros servicios
           </span>
           <h2
             className="mt-3 text-4xl font-normal tracking-tight text-foreground"
-            style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
+            style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}
           >
             Tres escalones para{" "}
-            <span style={{ color: "oklch(0.72 0.13 74)" }}>crecer.</span>
+            <span style={{ color: "oklch(0.50 0.085 142)" }}>crecer.</span>
           </h2>
         </div>
 
@@ -386,15 +386,15 @@ export function ServicesScroll() {
         <div className="mx-auto w-full max-w-7xl px-8 md:px-12 lg:px-16 pt-16 md:pt-20">
           <span
             className="text-[10px] font-normal uppercase tracking-[0.28em]"
-            style={{ color: "oklch(0.72 0.13 74)", fontFamily: "'Playfair Display', Georgia, serif" }}
+            style={{ color: "oklch(0.50 0.085 142)", fontFamily: "'Cormorant Garamond', Georgia, serif" }}
           >
             Nuestros servicios
           </span>
           <h2
             className="mt-3 max-w-2xl text-4xl font-normal tracking-tight text-foreground sm:text-5xl md:text-6xl"
-            style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
+            style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}
           >
-            Tres escalones para <span style={{ color: "oklch(0.72 0.13 74)" }}>crecer.</span>
+            Tres escalones para <span style={{ color: "oklch(0.50 0.085 142)" }}>crecer.</span>
           </h2>
         </div>
 
@@ -406,13 +406,13 @@ export function ServicesScroll() {
                 <article
                   key={service.number}
                   className="flex h-[60vh] w-[85vw] shrink-0 overflow-hidden rounded-3xl border shadow-xl md:h-[65vh] md:w-[80vw]"
-                  style={{ borderColor: "oklch(0.906 0.007 80)" }}
+                  style={{ borderColor: "oklch(0.880 0.018 82)" }}
                 >
                   {/* Left: text */}
                   <div className="relative flex w-1/2 flex-col justify-between p-8 md:p-12 overflow-hidden bg-background">
                     <div className="absolute inset-0 opacity-[0.06] pointer-events-none"
                       style={{
-                        backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='90' height='78' viewBox='0 0 90 78'%3E%3Cpath d='M22.5 2L67.5 2L88 39L67.5 76L22.5 76L2 39Z' fill='none' stroke='%23d6b36a' stroke-width='1' stroke-opacity='0.5'/%3E%3C/svg%3E")`,
+                        backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='90' height='78' viewBox='0 0 90 78'%3E%3Cpath d='M22.5 2L67.5 2L88 39L67.5 76L22.5 76L2 39Z' fill='none' stroke='%236b8f6e' stroke-width='1' stroke-opacity='0.5'/%3E%3C/svg%3E")`,
                         backgroundSize: "90px 78px"
                       }}
                     > </div>
@@ -423,16 +423,16 @@ export function ServicesScroll() {
                     <div className="relative flex items-center justify-between">
                       <span
                         className="text-sm font-normal"
-                        style={{ color: "oklch(0.72 0.008 80)", fontFamily: "'Playfair Display', Georgia, serif" }}
+                        style={{ color: "oklch(0.46 0.022 70)", fontFamily: "'Cormorant Garamond', Georgia, serif" }}
                       >
                         {service.number} / 03
                       </span>
                       <span
                         className="rounded-full px-3 py-1 text-[10px] font-normal uppercase tracking-wider"
                         style={{
-                          border: "1px solid oklch(0.906 0.007 80)",
-                          color: "oklch(0.72 0.008 80)",
-                          fontFamily: "'Playfair Display', Georgia, serif",
+                          border: "1px solid oklch(0.880 0.018 82)",
+                          color: "oklch(0.46 0.022 70)",
+                          fontFamily: "'Cormorant Garamond', Georgia, serif",
                         }}
                       >
                         {service.tag}
@@ -442,23 +442,23 @@ export function ServicesScroll() {
                     <div className="relative">
                       <h3
                         className="text-3xl font-normal tracking-tight text-foreground md:text-5xl"
-                        style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
+                        style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}
                       >
                         {service.title}
                       </h3>
                       <p
                         className="mt-4 max-w-sm text-sm font-normal leading-[1.85]"
-                        style={{ color: "oklch(0.72 0.008 80)", fontFamily: "'Playfair Display', Georgia, serif" }}
+                        style={{ color: "oklch(0.46 0.022 70)", fontFamily: "'Cormorant Garamond', Georgia, serif" }}
                       >
                         {service.description}
                       </p>
                     </div>
 
-                    <div className="relative h-px w-12 rounded-full" style={{ backgroundColor: "oklch(0.72 0.13 74)" }} />
+                    <div className="relative h-px w-12 rounded-full" style={{ backgroundColor: "oklch(0.50 0.085 142)" }} />
                   </div>
 
                   {/* Right: visual */}
-                  <div className="relative w-1/2 border-l" style={{ borderColor: "oklch(0.906 0.007 80)", backgroundColor: "oklch(0.988 0.005 80)" }}>
+                  <div className="relative w-1/2 border-l" style={{ borderColor: "oklch(0.880 0.018 82)", backgroundColor: "oklch(0.968 0.012 85)" }}>
                     <div
                       className="absolute inset-0 opacity-[0.04]"
                       style={{

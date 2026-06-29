@@ -13,6 +13,12 @@ const WORDS = [
   { text: " y presencia.",       hold: 2400 },
 ];
 
+const FONT_DISPLAY = "'Cormorant Garamond', Georgia, serif";
+// Verde oliva activo — accent-brand
+const ACCENT = "oklch(0.50 0.085 142)";
+// Verde salvia profundo — primary
+const PRIMARY = "oklch(0.35 0.076 148)";
+
 function jumpTo(id: string) {
   const el = document.getElementById(id);
   if (!el) return;
@@ -24,7 +30,7 @@ function measureText(text: string, fontSize: number): number {
   const canvas = document.createElement("canvas");
   const ctx = canvas.getContext("2d");
   if (!ctx) return 0;
-  ctx.font = `italic 400 ${fontSize}px 'Playfair Display'`;
+  ctx.font = `italic 400 ${fontSize}px 'Cormorant Garamond'`;
   return ctx.measureText(text).width;
 }
 
@@ -47,7 +53,7 @@ export function Hero() {
       const el = typedRef.current;
       if (!el || cancelled) return;
 
-      el.style.borderRight = "2px solid oklch(0.72 0.13 74)";
+      el.style.borderRight = `2px solid ${ACCENT}`;
       el.style.transition   = "none";
       el.style.width        = "0px";
       el.textContent        = word.text;
@@ -55,7 +61,7 @@ export function Hero() {
       await sleep(30);
       if (cancelled) return;
 
-      const targetW = Math.min(measureText(word.text, 54) + 6, 500);
+      const targetW = Math.min(measureText(word.text, 54) + 6, 520);
       const dur     = word.text.length * 42;
       el.style.transition = `width ${dur}ms steps(${word.text.length}, end)`;
       el.style.width      = `${targetW}px`;
@@ -108,17 +114,15 @@ export function Hero() {
         </Suspense>
       </div>
 
-      {/* Background watermark — en desktop se desplaza a la derecha para
-          el solapamiento elegante; en móvil se centra para que "glow"
-          sea siempre completamente visible. */}
+      {/* Background watermark */}
       <div
         aria-hidden="true"
         className="pointer-events-none select-none absolute leading-none"
         style={{
-          fontFamily: "'Playfair Display', Georgia, serif",
+          fontFamily: FONT_DISPLAY,
           fontSize: isMobile ? "clamp(100px, 28vw, 200px)" : "clamp(220px, 32vw, 520px)",
-          fontWeight: 390,
-          color: "oklch(0.14 0.016 62 / 0.045)",
+          fontWeight: 400,
+          color: "oklch(0.35 0.076 148 / 0.055)",
           letterSpacing: "-0.04em",
           whiteSpace: "nowrap",
           top: isMobile ? "18%" : "30%",
@@ -129,8 +133,7 @@ export function Hero() {
         glow
       </div>
 
-      {/* Main content — padding-left aumentado para empujar el texto
-          un poco a la derecha, pero menos que el watermark. */}
+      {/* Main content */}
       <div
         className="relative z-10 flex min-h-screen flex-col justify-start px-12 sm:px-20 md:px-28 lg:px-36 pb-11"
         style={{ paddingTop: "calc(52px + 14vh)" }}
@@ -143,11 +146,11 @@ export function Hero() {
         >
           <span
             className="h-px w-6 flex-none"
-            style={{ backgroundColor: "oklch(0.72 0.13 74)" }}
+            style={{ backgroundColor: ACCENT }}
           />
           <span
             className="text-[10px] font-normal tracking-[0.28em] uppercase"
-            style={{ color: "oklch(0.72 0.13 74)" }}
+            style={{ color: ACCENT, fontFamily: FONT_DISPLAY }}
           >
             Identidad · Posicionamiento · La Habana
           </span>
@@ -161,10 +164,11 @@ export function Hero() {
             style={{ animation: "hero-fade-up 0.7s ease 0.4s both" }}
           >
             <p
-              className="font-normal leading-[1.08] tracking-tight text-foreground"
+              className="font-normal leading-[1.05] tracking-tight text-foreground"
               style={{
-                fontFamily: "'Playfair Display', Georgia, serif",
-                fontSize: "clamp(2.4rem, 5vw, 3.5rem)",
+                fontFamily: FONT_DISPLAY,
+                fontSize: "clamp(2.6rem, 5.5vw, 4rem)",
+                fontWeight: 300,
               }}
             >
               Te damos
@@ -177,10 +181,11 @@ export function Hero() {
             style={{ animation: "hero-fade-up 0.7s ease 0.55s both" }}
           >
             <p
-              className="font-normal leading-[1.08] tracking-tight text-foreground"
+              className="font-normal leading-[1.05] tracking-tight text-foreground"
               style={{
-                fontFamily: "'Playfair Display', Georgia, serif",
-                fontSize: "clamp(2.4rem, 5vw, 3.5rem)",
+                fontFamily: FONT_DISPLAY,
+                fontSize: "clamp(2.6rem, 5.5vw, 4rem)",
+                fontWeight: 300,
               }}
             >
               identidad
@@ -190,14 +195,14 @@ export function Hero() {
               ref={typedRef}
               className="overflow-hidden whitespace-nowrap"
               style={{
-                fontFamily: "'Playfair Display', Georgia, serif",
-                fontSize: "clamp(2.4rem, 5vw, 3.5rem)",
+                fontFamily: FONT_DISPLAY,
+                fontSize: "clamp(2.6rem, 5.5vw, 4rem)",
                 fontWeight: 400,
                 fontStyle: "italic",
-                color: "oklch(0.72 0.13 74)",
-                lineHeight: 1.08,
+                color: ACCENT,
+                lineHeight: 1.05,
                 letterSpacing: "-0.02em",
-                borderRight: "2px solid oklch(0.72 0.13 74)",
+                borderRight: `2px solid ${ACCENT}`,
                 width: 0,
               }}
             />
@@ -210,18 +215,18 @@ export function Hero() {
           style={{ animation: "hero-fade-up 0.6s ease 1.8s both" }}
         >
           <span
-            className="h-px w-10 flex-none opacity-40"
-            style={{ backgroundColor: "oklch(0.72 0.13 74)" }}
+            className="h-px w-10 flex-none opacity-50"
+            style={{ backgroundColor: PRIMARY }}
           />
           <span
-            className="h-[3px] w-[3px] rounded-full opacity-50 flex-none"
-            style={{ backgroundColor: "oklch(0.72 0.13 74)" }}
+            className="h-[3px] w-[3px] rounded-full opacity-40 flex-none"
+            style={{ backgroundColor: PRIMARY }}
           />
         </div>
 
         {/* Subtext */}
         <p
-          className="text-sm font-normal leading-[1.85] text-muted-foreground max-w-[38ch] sm:text-[0.9375rem] mb-8"
+          className="text-sm font-normal leading-[1.9] text-muted-foreground max-w-[40ch] sm:text-[0.9375rem] mb-9"
           style={{ animation: "hero-fade-up 0.6s ease 1.9s both" }}
         >
           Diseño, web y estrategia digital para marcas que quieren ser
@@ -238,18 +243,20 @@ export function Hero() {
             onClick={(e) => { e.preventDefault(); jumpTo("contacto"); }}
             className="inline-flex items-center gap-2 rounded-md px-7 py-3 text-sm font-normal tracking-wide transition-colors duration-200"
             style={{
-              background: "oklch(0.14 0.016 62)",
-              color: "oklch(0.988 0.005 80)",
+              background: PRIMARY,
+              color: "oklch(0.968 0.012 85)",
               letterSpacing: "0.05em",
+              fontFamily: FONT_DISPLAY,
+              fontSize: "0.9rem",
             }}
-            onMouseEnter={(e) => (e.currentTarget.style.background = "oklch(0.22 0.016 62)")}
-            onMouseLeave={(e) => (e.currentTarget.style.background = "oklch(0.14 0.016 62)")}
+            onMouseEnter={(e) => (e.currentTarget.style.background = "oklch(0.42 0.08 148)")}
+            onMouseLeave={(e) => (e.currentTarget.style.background = PRIMARY)}
           >
             Hablemos
             <svg width="13" height="13" viewBox="0 0 14 14" fill="none">
               <path
                 d="M2.5 7h9M7.5 3.5L11 7l-3.5 3.5"
-                stroke="oklch(0.988 0.005 80)"
+                stroke="oklch(0.968 0.012 85)"
                 strokeWidth="1.2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -264,7 +271,7 @@ export function Hero() {
             style={{ letterSpacing: "0.05em" }}
           >
             Ver servicios
-            <span style={{ color: "oklch(0.72 0.13 74)", fontSize: "1rem" }}>→</span>
+            <span style={{ color: ACCENT, fontSize: "1rem" }}>→</span>
           </a>
         </div>
       </div>
@@ -274,8 +281,8 @@ export function Hero() {
         className="absolute bottom-0 left-0 right-0 flex items-center gap-8 border-t px-12 sm:px-20 md:px-28 lg:px-36 overflow-x-auto scrollbar-none"
         style={{
           height: "44px",
-          borderColor: "oklch(0.906 0.007 80)",
-          backgroundColor: "oklch(0.988 0.005 80)",
+          borderColor: "oklch(0.880 0.018 82)",
+          backgroundColor: "oklch(0.968 0.012 85)",
           animation: "hero-fade-up 0.5s ease 2.4s both",
         }}
       >
@@ -289,14 +296,14 @@ export function Hero() {
             {!accent && (
               <span
                 className="h-1 w-1 rounded-full flex-none opacity-50"
-                style={{ backgroundColor: "oklch(0.72 0.13 74)" }}
+                style={{ backgroundColor: ACCENT }}
               />
             )}
             <span
               className="text-[10px] font-normal tracking-[0.2em] uppercase"
               style={{
-                color: accent ? "oklch(0.72 0.13 74)" : "oklch(0.72 0.008 80)",
-                opacity: accent ? 0.8 : 1,
+                color: accent ? ACCENT : "oklch(0.55 0.022 72)",
+                opacity: accent ? 0.9 : 1,
               }}
             >
               {label}

@@ -34,19 +34,19 @@ function PhoneFeed() {
           <article
             key={i}
             className="shrink-0 rounded-xl border bg-card"
-            style={{ borderColor: "oklch(0.906 0.007 80)" }}
+            style={{ borderColor: "oklch(0.880 0.018 82)" }}
           >
             <div className="flex items-center gap-2 p-2.5">
               <div className={`h-7 w-7 rounded-full ${post.color}`} />
               <div
                 className="h-2 w-20 rounded"
-                style={{ backgroundColor: "oklch(0.906 0.007 80)" }}
+                style={{ backgroundColor: "oklch(0.880 0.018 82)" }}
               />
             </div>
             <div className={`aspect-square w-full ${post.color} opacity-90`} />
             <div
               className="flex items-center gap-3 p-2.5"
-              style={{ color: "oklch(0.14 0.016 62)" }}
+              style={{ color: "oklch(0.18 0.022 62)" }}
             >
               <Heart className="h-4 w-4" />
               <MessageCircle className="h-4 w-4" />
@@ -56,11 +56,11 @@ function PhoneFeed() {
             <div className="space-y-1.5 px-2.5 pb-3">
               <div
                 className="h-2 w-3/4 rounded"
-                style={{ backgroundColor: "oklch(0.906 0.007 80)" }}
+                style={{ backgroundColor: "oklch(0.880 0.018 82)" }}
               />
               <div
                 className="h-2 w-1/2 rounded"
-                style={{ backgroundColor: "oklch(0.906 0.007 80)" }}
+                style={{ backgroundColor: "oklch(0.880 0.018 82)" }}
               />
             </div>
           </article>
@@ -77,20 +77,20 @@ function SocialScrollyMobile() {
       <div className="mb-10">
         <span
           className="text-[10px] font-normal uppercase tracking-[0.28em]"
-          style={{ color: "oklch(0.72 0.13 74)", fontFamily: "'Playfair Display', Georgia, serif" }}
+          style={{ color: "oklch(0.50 0.085 142)", fontFamily: "'Cormorant Garamond', Georgia, serif" }}
         >
           Servicios en práctica
         </span>
         <h2
           className="mt-3 text-4xl font-normal tracking-tight text-foreground"
-          style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
+          style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}
         >
           Tus redes,{" "}
-          <span style={{ color: "oklch(0.72 0.13 74)" }}>vivas</span> todos los días.
+          <span style={{ color: "oklch(0.50 0.085 142)" }}>vivas</span> todos los días.
         </h2>
         <p
           className="mt-5 text-sm font-normal leading-[1.85]"
-          style={{ color: "oklch(0.72 0.008 80)", fontFamily: "'Playfair Display', Georgia, serif" }}
+          style={{ color: "oklch(0.46 0.022 70)", fontFamily: "'Cormorant Garamond', Georgia, serif" }}
         >
           Diseñamos, programamos y publicamos contenido constante para tu
           negocio. Mientras tú lo atiendes, nosotros mantenemos tu
@@ -106,20 +106,20 @@ function SocialScrollyMobile() {
           viewport={{ once: true, amount: 0.4 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
           style={{
-            borderColor: "oklch(0.14 0.016 62)",
+            borderColor: "oklch(0.18 0.022 62)",
           }}
           className="relative h-[400px] w-[200px] rounded-[2.4rem] border-[10px] bg-foreground shadow-2xl"
         >
           <div
             className="absolute left-1/2 top-2 z-10 h-4 w-20 -translate-x-1/2 rounded-full"
-            style={{ backgroundColor: "oklch(0.14 0.016 62)" }}
+            style={{ backgroundColor: "oklch(0.18 0.022 62)" }}
           />
           <div className="h-full w-full overflow-hidden rounded-[1.5rem] bg-background">
             <PhoneFeed />
           </div>
           <div
             className="pointer-events-none absolute -inset-8 -z-10 rounded-[3.5rem] blur-3xl"
-            style={{ backgroundColor: "oklch(0.72 0.13 74 / 0.2)" }}
+            style={{ backgroundColor: "oklch(0.50 0.085 142 / 0.15)" }}
           />
         </motion.div>
       </div>
@@ -136,11 +136,11 @@ function SocialScrollyMobile() {
           <li
             key={item}
             className="flex items-center gap-3 text-sm font-normal"
-            style={{ color: "oklch(0.14 0.016 62)", fontFamily: "'Playfair Display', Georgia, serif" }}
+            style={{ color: "oklch(0.18 0.022 62)", fontFamily: "'Cormorant Garamond', Georgia, serif" }}
           >
             <span
               className="h-px w-6 rounded-full flex-none"
-              style={{ backgroundColor: "oklch(0.72 0.13 74)" }}
+              style={{ backgroundColor: "oklch(0.50 0.085 142)" }}
             />
             {item}
           </li>
@@ -192,20 +192,20 @@ export function SocialScrolly() {
                 rotateZ,
                 scale,
                 transformStyle: "preserve-3d",
-                borderColor: "oklch(0.14 0.016 62)",
+                borderColor: "oklch(0.18 0.022 62)",
               }}
               className="relative h-[560px] w-[280px] rounded-[2.8rem] border-[12px] bg-foreground shadow-2xl"
             >
               <div
                 className="absolute left-1/2 top-2 z-10 h-5 w-24 -translate-x-1/2 rounded-full"
-                style={{ backgroundColor: "oklch(0.14 0.016 62)" }}
+                style={{ backgroundColor: "oklch(0.18 0.022 62)" }}
               />
               <div className="h-full w-full overflow-hidden rounded-[1.8rem] bg-background">
                 <PhoneFeed />
               </div>
               <div
                 className="pointer-events-none absolute -inset-8 -z-10 rounded-[3.5rem] blur-3xl"
-                style={{ backgroundColor: "oklch(0.72 0.13 74 / 0.2)" }}
+                style={{ backgroundColor: "oklch(0.50 0.085 142 / 0.15)" }}
               />
             </motion.div>
           </div>
@@ -217,20 +217,20 @@ export function SocialScrolly() {
           >
             <span
               className="text-[10px] font-normal uppercase tracking-[0.28em]"
-              style={{ color: "oklch(0.72 0.13 74)", fontFamily: "'Playfair Display', Georgia, serif" }}
+              style={{ color: "oklch(0.50 0.085 142)", fontFamily: "'Cormorant Garamond', Georgia, serif" }}
             >
               Servicios en práctica
             </span>
             <h2
               className="mt-3 text-4xl font-normal tracking-tight text-foreground sm:text-5xl md:text-6xl"
-              style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
+              style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}
             >
               Tus redes,{" "}
-              <span style={{ color: "oklch(0.72 0.13 74)" }}>vivas</span> todos los días.
+              <span style={{ color: "oklch(0.50 0.085 142)" }}>vivas</span> todos los días.
             </h2>
             <p
               className="mt-6 text-base font-normal leading-[1.85] md:text-lg"
-              style={{ color: "oklch(0.72 0.008 80)", fontFamily: "'Playfair Display', Georgia, serif" }}
+              style={{ color: "oklch(0.46 0.022 70)", fontFamily: "'Cormorant Garamond', Georgia, serif" }}
             >
               Diseñamos, programamos y publicamos contenido constante para tu
               negocio. Mientras tú lo atiendes, nosotros mantenemos tu
@@ -241,11 +241,11 @@ export function SocialScrolly() {
                 <li
                   key={item}
                   className="flex items-center gap-3 text-sm font-normal md:text-base"
-                  style={{ color: "oklch(0.14 0.016 62)", fontFamily: "'Playfair Display', Georgia, serif" }}
+                  style={{ color: "oklch(0.18 0.022 62)", fontFamily: "'Cormorant Garamond', Georgia, serif" }}
                 >
                   <span
                     className="h-px w-6 rounded-full flex-none"
-                    style={{ backgroundColor: "oklch(0.72 0.13 74)" }}
+                    style={{ backgroundColor: "oklch(0.50 0.085 142)" }}
                   />
                   {item}
                 </li>

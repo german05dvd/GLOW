@@ -52,13 +52,13 @@ function LogoCard({
         left: logo.left,
         width: logo.size,
         height: logo.size,
-        borderColor: "oklch(0.906 0.007 80)",
+        borderColor: "oklch(0.880 0.018 82)",
       }}
       className="absolute flex items-center justify-center rounded-2xl border bg-card shadow-xl"
     >
       <Icon
         className="h-1/2 w-1/2"
-        style={{ color: logo.tint === "text-accent-brand" ? "oklch(0.72 0.13 74)" : logo.tint === "text-foreground" ? "oklch(0.14 0.016 62)" : "oklch(0.72 0.008 80)" }}
+        style={{ color: logo.tint === "text-accent-brand" ? "oklch(0.50 0.085 142)" : logo.tint === "text-foreground" ? "oklch(0.18 0.022 62)" : "oklch(0.46 0.022 70)" }}
         strokeWidth={1.2}
       />
     </motion.div>
@@ -97,25 +97,25 @@ function StepItem({
       <div className="flex flex-col items-center pt-2">
         <span
           className="text-xs font-normal"
-          style={{ color: "oklch(0.72 0.13 74)", fontFamily: "'Playfair Display', Georgia, serif" }}
+          style={{ color: "oklch(0.50 0.085 142)", fontFamily: "'Cormorant Garamond', Georgia, serif" }}
         >
           {step.n}
         </span>
         <motion.div
-          style={{ scaleY: barScale, backgroundColor: "oklch(0.72 0.13 74)" }}
+          style={{ scaleY: barScale, backgroundColor: "oklch(0.50 0.085 142)" }}
           className="mt-2 h-12 w-px origin-top"
         />
       </div>
       <div>
         <h3
           className="text-xl font-normal tracking-tight text-foreground md:text-2xl"
-          style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
+          style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}
         >
           {step.title}
         </h3>
         <p
           className="mt-1 max-w-xs text-sm font-normal leading-[1.85]"
-          style={{ color: "oklch(0.72 0.008 80)", fontFamily: "'Playfair Display', Georgia, serif" }}
+          style={{ color: "oklch(0.46 0.022 70)", fontFamily: "'Cormorant Garamond', Georgia, serif" }}
         >
           {step.desc}
         </p>
@@ -148,16 +148,16 @@ export function BrandScrolly() {
           <div>
             <span
               className="text-[10px] font-normal uppercase tracking-[0.28em]"
-              style={{ color: "oklch(0.72 0.13 74)", fontFamily: "'Playfair Display', Georgia, serif" }}
+              style={{ color: "oklch(0.50 0.085 142)", fontFamily: "'Cormorant Garamond', Georgia, serif" }}
             >
               Diseño de marca
             </span>
             <h2
               className="mt-3 text-4xl font-normal tracking-tight text-foreground sm:text-5xl"
-              style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
+              style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}
             >
               Tu marca,{" "}
-              <span style={{ color: "oklch(0.72 0.13 74)" }}>paso a paso.</span>
+              <span style={{ color: "oklch(0.50 0.085 142)" }}>paso a paso.</span>
             </h2>
             <div className="mt-10 space-y-6">
               {steps.map((step, i) => (
@@ -189,7 +189,7 @@ export function BrandScrolly() {
             })}
             <div
               className="pointer-events-none absolute left-1/2 top-1/2 -z-10 h-[60%] w-[60%] -translate-x-1/2 -translate-y-1/2 rounded-full blur-3xl"
-              style={{ backgroundColor: "oklch(0.72 0.13 74 / 0.15)" }}
+              style={{ backgroundColor: "oklch(0.50 0.085 142 / 0.12)" }}
             />
           </div>
         </div>

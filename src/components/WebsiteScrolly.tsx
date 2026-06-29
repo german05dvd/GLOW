@@ -493,7 +493,7 @@ export function WebsiteScrolly() {
           </svg>
         </motion.div>
         <div className="absolute top-0 right-[20%] w-px h-full bg-gradient-to-b from-transparent via-accent-brand/10 to-transparent" />
-        <div className="absolute bottom-[25%] left-[15%] w-32 h-32 rounded-full border" style={{ borderColor: "oklch(0.72 0.13 74 / 0.1)" }} />
+        <div className="absolute bottom-[25%] left-[15%] w-32 h-32 rounded-full border" style={{ borderColor: "oklch(0.50 0.085 142 / 0.12)" }} />
       </div>
 
       <div className="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden px-8 md:px-12 lg:px-16">
@@ -505,22 +505,22 @@ export function WebsiteScrolly() {
             <div>
               <span
                 className="text-[10px] font-normal uppercase tracking-[0.28em]"
-                style={{ color: "oklch(0.72 0.13 74)", fontFamily: "'Playfair Display', Georgia, serif" }}
+                style={{ color: "oklch(0.50 0.085 142)", fontFamily: "'Cormorant Garamond', Georgia, serif" }}
               >
                 Sitios web · catálogos autónomos
               </span>
               <h2
                 className="mt-3 text-3xl font-normal tracking-tight text-foreground sm:text-4xl md:text-5xl lg:text-6xl leading-tight"
-                style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
+                style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}
               >
                 Experimenta el flujo en{" "}
-                <span style={{ color: "oklch(0.72 0.13 74)" }}>tiempo real.</span>
+                <span style={{ color: "oklch(0.50 0.085 142)" }}>tiempo real.</span>
               </h2>
             </div>
 
             <p
               className="text-sm sm:text-base max-w-xl leading-[1.85] mx-auto md:mx-0"
-              style={{ color: "oklch(0.72 0.008 80)", fontFamily: "'Playfair Display', Georgia, serif" }}
+              style={{ color: "oklch(0.72 0.008 80)", fontFamily: "'Cormorant Garamond', Georgia, serif" }}
             >
               Interactúa con el catálogo simulado como si fueras tu propio cliente.
               Al hacer tu pedido, verás cómo nuestro sistema estructura automáticamente el mensaje
@@ -536,9 +536,9 @@ export function WebsiteScrolly() {
                     : "shadow-accent-brand/30 animate-pulse"
                 }`}
                 style={{
-                  fontFamily: "'Playfair Display', Georgia, serif",
-                  background: isUserInteracting ? "oklch(0.14 0.016 62)" : "oklch(0.72 0.13 74)",
-                  color: isUserInteracting ? "oklch(0.988 0.005 80)" : "oklch(0.14 0.016 62)",
+                  fontFamily: "'Cormorant Garamond', Georgia, serif",
+                  background: isUserInteracting ? "oklch(0.25 0.048 148)" : "oklch(0.50 0.085 142)",
+                  color: isUserInteracting ? "oklch(0.968 0.012 85)" : "oklch(0.25 0.048 148)",
                 }}
               >
                 {isUserInteracting ? (
@@ -555,7 +555,7 @@ export function WebsiteScrolly() {
               </button>
               <span
                 className="text-xs font-normal"
-                style={{ color: "oklch(0.72 0.008 80)", fontFamily: "'Playfair Display', Georgia, serif" }}
+                style={{ color: "oklch(0.72 0.008 80)", fontFamily: "'Cormorant Garamond', Georgia, serif" }}
               >
                 {isUserInteracting ? "✨ Modo interactivo activado" : "Demo automática en curso"}
               </span>
@@ -564,10 +564,10 @@ export function WebsiteScrolly() {
 
           <div className="flex justify-center md:justify-end items-center order-1 md:order-2 w-full">
             <motion.div
-              style={{ y, scale, opacity, borderColor: "oklch(0.14 0.016 62)", backgroundColor: "oklch(0.14 0.016 62)" }}
+              style={{ y, scale, opacity, borderColor: "oklch(0.25 0.048 148)", backgroundColor: "oklch(0.25 0.048 148)" }}
               className="relative h-[62vh] min-h-[440px] max-h-[600px] w-[290px] sm:w-[310px] rounded-[2.8rem] border-[10px] shadow-2xl shrink-0 overflow-hidden"
             >
-              <div className="absolute left-1/2 top-2.5 z-30 h-4 w-24 -translate-x-1/2 rounded-full pointer-events-none" style={{ backgroundColor: "oklch(0.14 0.016 62)" }} />
+              <div className="absolute left-1/2 top-2.5 z-30 h-4 w-24 -translate-x-1/2 rounded-full pointer-events-none" style={{ backgroundColor: "oklch(0.25 0.048 148)" }} />
               <div className="h-full w-full overflow-hidden rounded-[2.1rem] bg-background relative z-10">
                 <CatalogApp
                   currentScreen={screen}
@@ -583,7 +583,7 @@ export function WebsiteScrolly() {
                   messageSent={messageSent}
                 />
               </div>
-              <div className="pointer-events-none absolute -inset-10 -z-10 rounded-[3rem] blur-3xl" style={{ backgroundColor: "oklch(0.72 0.13 74 / 0.1)" }} />
+              <div className="pointer-events-none absolute -inset-10 -z-10 rounded-[3rem] blur-3xl" style={{ backgroundColor: "oklch(0.50 0.085 142 / 0.12)" }} />
             </motion.div>
           </div>
         </div>
